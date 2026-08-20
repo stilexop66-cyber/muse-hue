@@ -1,5 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+// Local Fonts Setup
+const syne = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  weight: "800",
+  style: "normal",
+});
+
+const urbanist = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "900",
+  style: "normal",
+});
 
 interface ServiceCategory {
   title: string;
@@ -173,7 +187,7 @@ export default function OurServicesSection() {
 
         {/* Title & Floral Accent */}
         <div className="relative mb-8 flex items-center justify-between">
-          <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-neutral-900 max-w-[65%] leading-tight">
+          <h3 className={`${syne.className} text-3xl md:text-4xl tracking-tight text-neutral-900 max-w-[65%] leading-tight`}>
             {category.title}
           </h3>
 
@@ -213,7 +227,7 @@ export default function OurServicesSection() {
                     />
                   </svg>
                 </div>
-                <span className="text-sm font-medium text-neutral-800">
+                <span className={`${urbanist.className} text-sm text-neutral-800`}>
                   {item}
                 </span>
               </div>
@@ -226,7 +240,7 @@ export default function OurServicesSection() {
       <div className="pt-4">
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] text-neutral-950 font-semibold text-xs shadow-md hover:opacity-90 transition-opacity"
+          className={`${syne.className} inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] text-neutral-950 font-semibold text-xs shadow-md hover:opacity-90 transition-opacity`}
         >
           Contact Us <span>↗</span>
         </Link>
@@ -239,11 +253,11 @@ export default function OurServicesSection() {
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Title Header */}
         <div className="flex justify-center items-center gap-3 mb-16">
-          <span className="text-4xl md:text-5xl font-bold text-[#1A1A1A] tracking-tight">
+          <span className={`${syne.className} text-4xl md:text-5xl text-[#1A1A1A] tracking-tight`}>
             Our
           </span>
           <div className="px-6 py-2 rounded-sm shadow-sm bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B]">
-            <span className="text-[#111111] font-bold text-4xl md:text-5xl">
+            <span className={`${syne.className} text-[#111111] text-4xl md:text-5xl`}>
               Services
             </span>
           </div>

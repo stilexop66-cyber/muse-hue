@@ -1,5 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+// Local Fonts Setup
+const syne = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  weight: "800",
+  style: "normal",
+});
+
+const urbanist = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "900",
+  style: "normal",
+});
 
 const addOns = [
   "Hair Treatments",
@@ -14,14 +28,15 @@ export default function AddOnSection() {
     <section className="bg-white text-neutral-900 pt-16 pb-24">
       {/* 1. Add On Title Header */}
       <div className="flex justify-center items-center gap-3 mb-12">
-        <span className="text-4xl md:text-5xl font-bold text-[#1A1A1A] tracking-tight">
+        <span className={`${syne.className} text-4xl md:text-5xl text-[#1A1A1A] tracking-tight`}>
           Add
         </span>
         <div className="relative px-6 py-2 rounded-sm shadow-sm overflow-hidden flex items-center justify-center min-w-[80px] min-h-[50px]">
           {/* Gold Image Background */}
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/gold-bg.png')",
+            style={{ 
+              backgroundImage: "url('/images/gold-bg.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
@@ -29,7 +44,7 @@ export default function AddOnSection() {
               width: "100%",
             }}
           />
-          <span className="text-[#111111] font-bold text-4xl md:text-5xl relative z-10">
+          <span className={`${syne.className} text-[#111111] text-4xl md:text-5xl relative z-10`}>
             On
           </span>
         </div>
@@ -56,7 +71,7 @@ export default function AddOnSection() {
                 className="absolute top-0 left-0 right-0 h-[4px] bg-cover bg-center"
                 style={{ backgroundImage: "url('/images/gold-bg.png')" }}
               />
-              <h3 className="text-lg font-bold text-neutral-900 tracking-wide text-center leading-snug">
+              <h3 className={`${syne.className} text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
               </h3>
             </div>
@@ -82,7 +97,7 @@ export default function AddOnSection() {
                 className="absolute top-0 left-0 right-0 h-[4px] bg-cover bg-center"
                 style={{ backgroundImage: "url('/images/gold-bg.png')" }}
               />
-              <h3 className="text-lg font-bold text-neutral-900 tracking-wide text-center leading-snug">
+              <h3 className={`${syne.className} text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
               </h3>
             </div>
@@ -95,14 +110,14 @@ export default function AddOnSection() {
         {/* Black Horizontal Band */}
         <div className="w-full bg-black text-white py-10 flex justify-center">
           <div className="w-full max-w-[1072px] px-4 flex flex-row justify-between items-center pb-28">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            <h2 className={`${syne.className} text-3xl md:text-4xl tracking-tight`}>
               Book Your Appointment Now
             </h2>
 
             {/* Gold CTA Button - Shaped to Container */}
             <Link
               href="/contact"
-              className="relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 font-semibold text-sm shadow-md overflow-hidden group flex-shrink-0"
+              className={`${syne.className} relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md overflow-hidden group flex-shrink-0`}
             >
               <div
                 className="absolute inset-0 bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300"
@@ -127,7 +142,7 @@ export default function AddOnSection() {
 
             {/* Dark Overlay with Centered Text */}
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-6 text-center">
-              <p className="text-2xl md:text-4xl font-bold text-white tracking-wide max-w-2xl leading-relaxed drop-shadow-md">
+              <p className={`${syne.className} text-2xl md:text-4xl text-white tracking-wide max-w-2xl leading-relaxed drop-shadow-md`}>
                 Designing Hair Crafts <br />
                 That Speak Your Style
               </p>

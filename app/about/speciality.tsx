@@ -1,5 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+// Local Fonts Setup
+const syne = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  weight: "800",
+  style: "normal",
+});
+
+const urbanist = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "900",
+  style: "normal",
+});
 
 const specialties = [
   {
@@ -36,7 +50,7 @@ export default function Speciality() {
           }}
         >
           <h2 
-            className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl"
+            className={`${syne.className} text-2xl xs:text-3xl sm:text-4xl lg:text-5xl`}
             style={{ 
               width: "100%", 
               display: "flex", 
@@ -64,7 +78,7 @@ export default function Speciality() {
         <div className="founder-wrapper">
           <div className="founder-box">
             <div className="quote quote-left">“</div>
-            <p className="founder-text text-sm sm:text-base leading-relaxed">
+            <p className={`${urbanist.className} founder-text text-sm sm:text-base leading-relaxed`}>
               When I set out to build this salon, I envisioned far more than just
               a place to get a haircut or a facial. I wanted to create a welcoming
               sanctuary where luxury meets genuine personal connection—a space
@@ -86,14 +100,14 @@ export default function Speciality() {
       {/* =========================================
           SPECIALITY SECTION
       ========================================= */}
-      <section style={{ width: "100%", backgroundColor: "#ffffff" }} className="py-12 sm:py-20 px-4 sm:px-5">
+      <section style={{ width: "100%", backgroundColor: "#ffffff", padding: "80px 20px" }}>
         <div style={{ textAlign: "center", marginBottom: "60px" }}>
           <h2
-            className="text-3xl xs:text-4xl sm:text-6xl lg:text-[80px]"
             style={{
               fontFamily: "'Syne', sans-serif",
               fontWeight: 700,
               fontStyle: "normal",
+              fontSize: "80px",
               lineHeight: "100%",
               letterSpacing: "0%",
               color: "#1a2228",
@@ -107,7 +121,7 @@ export default function Speciality() {
           >
             Our{" "}
             <div 
-              className="relative inline-flex items-center justify-center px-6 sm:px-8 py-2 rounded-md overflow-hidden align-middle"
+              className="relative inline-flex items-center justify-center px-8 py-2 rounded-md overflow-hidden align-middle"
             >
               <div 
                 className="absolute inset-0 bg-cover bg-center"
@@ -121,14 +135,33 @@ export default function Speciality() {
         </div>
 
         <div
-          className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-[40px] max-w-[1150px] mx-auto"
+          style={{
+            maxWidth: "1150px",
+            margin: "0 auto",
+            display: "flex",
+            justifyContent: "center",
+            gap: "40px",
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
         >
           {/* Left Side Image Collage */}
           <div
-            className="grid grid-cols-1 xs:grid-cols-2 gap-4 items-center w-full lg:w-auto"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "247px 247px",
+              gap: "16px",
+              alignItems: "center",
+            }}
           >
             <div
-              className="relative w-full xs:w-[247px] h-[300px] xs:h-[368px] rounded-lg overflow-hidden mx-auto"
+              style={{
+                position: "relative",
+                width: "247px",
+                height: "368px",
+                borderRadius: "8px",
+                overflow: "hidden",
+              }}
             >
               <Image
                 src="/images/speciality-2.jpg"
@@ -138,9 +171,15 @@ export default function Speciality() {
               />
             </div>
 
-            <div className="flex flex-col gap-4 w-full xs:w-auto">
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
               <div
-                className="relative w-full xs:w-[247px] h-[220px] xs:h-[298px] rounded-lg overflow-hidden mx-auto"
+                style={{
+                  position: "relative",
+                  width: "247px",
+                  height: "298px",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                }}
               >
                 <Image
                   src="/images/speciality-1.jpg"
@@ -150,7 +189,13 @@ export default function Speciality() {
                 />
               </div>
               <div
-                className="relative w-full xs:w-[247px] h-[220px] xs:h-[298px] rounded-lg overflow-hidden mx-auto"
+                style={{
+                  position: "relative",
+                  width: "247px",
+                  height: "298px",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                }}
               >
                 <Image
                   src="/images/speciality-3.jpg"
@@ -164,7 +209,14 @@ export default function Speciality() {
 
           {/* Right Side Services List Container */}
           <div 
-            className="w-full lg:w-[511px] h-auto lg:h-[736px] flex flex-col gap-[32px] box-border"
+            style={{ 
+              width: "511px", 
+              height: "736px", 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "32px",
+              boxSizing: "border-box"
+            }}
           >
             {specialties.map((service) => (
               <div 
@@ -182,14 +234,14 @@ export default function Speciality() {
                     alt={`${service.title} icon`} 
                     width={32} 
                     height={32} 
-                    className="object-contain flex-shrink-0"
+                    className="object-contain"
                   />
                   <h3
-                    className="text-2xl sm:text-3xl lg:text-[40px]"
                     style={{
                       fontFamily: "'Syne', sans-serif",
                       fontWeight: 700,
                       fontStyle: "normal",
+                      fontSize: "40px",
                       lineHeight: "100%",
                       letterSpacing: "0%",
                       color: "#111111",
@@ -226,18 +278,18 @@ export default function Speciality() {
       </section>
 
       {/* =========================================
-          APPOINTMENT SECTION (Exact Copy from Contact)
+          APPOINTMENT SECTION
       ========================================= */}
       <div className="relative w-full flex flex-col items-center my-8 sm:my-12 px-4">
         <div className="w-full bg-black text-white py-8 sm:py-10 flex justify-center rounded-t-2xl sm:rounded-none">
           <div className="w-full max-w-[1072px] px-4 flex flex-col sm:flex-row justify-between items-center gap-4 pb-20 sm:pb-28 text-center sm:text-left">
-            <h2 className="text-xl xs:text-2xl md:text-4xl font-bold tracking-tight">
+            <h2 className={`${syne.className} text-xl xs:text-2xl md:text-4xl tracking-tight`}>
               Book Your Appointment Now
             </h2>
 
             <Link
               href="/contactus"
-              className="relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 font-semibold text-sm shadow-md overflow-hidden group flex-shrink-0"
+              className={`${syne.className} relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md overflow-hidden group flex-shrink-0`}
             >
               <div
                 className="absolute inset-0 bg-contain bg-center bg-no-repeat group-hover:scale-105 transition-transform duration-300"
@@ -260,7 +312,7 @@ export default function Speciality() {
             />
 
             <div className="absolute inset-0 z-10 bg-black/40 flex items-center justify-center p-4 sm:p-6 text-center">
-              <p className="text-xl sm:text-3xl md:text-4xl font-bold text-white tracking-wide max-w-2xl leading-snug sm:leading-relaxed drop-shadow-md">
+              <p className={`${syne.className} text-xl sm:text-3xl md:text-4xl text-white tracking-wide max-w-2xl leading-snug sm:leading-relaxed drop-shadow-md`}>
                 Designing Hair Crafts <br />
                 That Speak Your Style
               </p>
@@ -276,10 +328,8 @@ export default function Speciality() {
         className="brand-statement w-full py-12 sm:py-20 px-4 flex justify-center"
       >
         <p
-          className="text-2xl xs:text-3xl sm:text-5xl lg:text-[60px]"
+          className={`${urbanist.className} text-2xl xs:text-3xl sm:text-5xl lg:text-[60px]`}
           style={{
-            fontFamily: "'Urbanist', sans-serif",
-            fontWeight: 600,
             fontStyle: "italic",
             lineHeight: "100%",
             letterSpacing: "0%",

@@ -1,4 +1,18 @@
+
 import React from "react";
+import localFont from "next/font/local";
+
+const syne = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  weight: "800",
+  style: "normal",
+});
+
+const urbanist = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "900",
+  style: "normal",
+});
 
 const reasons = [
   {
@@ -37,7 +51,7 @@ const reasons = [
     text: "Step away from the daily hustle into a calm, thoughtfully designed sanctuary. Enjoy soothing aromas, comfortable seating, and a serene atmosphere crafted for your total relaxation.",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.2 19.53 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z" />
+        <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0 0l1.9-1.9C9.2 19.53 10.56 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z" />
       </svg>
     ),
   },
@@ -47,7 +61,7 @@ const reasons = [
     text: "Enjoy total peace of mind with our strict single-use and sanitized tool protocols. Relax even further with a complimentary beverage and snack menu served right to your chair.",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l2 2z" />
       </svg>
     ),
   },
@@ -58,7 +72,9 @@ export default function ChooseUs() {
     <section className="choose-section w-full py-10 xs:py-12 sm:py-16 px-4 sm:px-6 md:px-8">
       {/* Heading */}
       <div className="section-heading text-center mb-8 sm:mb-12">
-        <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight inline-flex items-center justify-center gap-2 flex-wrap">
+        <h2
+          className={`${syne.className} text-2xl xs:text-3xl sm:text-4xl lg:text-5xl tracking-tight inline-flex items-center justify-center gap-2 flex-wrap`}
+        >
           Why Clients{" "}
           <div className="relative inline-flex items-center justify-center px-4 sm:px-8 py-1 sm:py-2 mx-1 rounded-md overflow-hidden align-middle">
             {/* Background Div */}
@@ -66,8 +82,9 @@ export default function ChooseUs() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: "url('/images/gold-bg.png')" }}
             />
+
             {/* Text on top */}
-            <span className="relative z-10 text-neutral-900 font-bold">
+            <span className={`${syne.className} relative z-10 text-neutral-900`}>
               Choose
             </span>
           </div>{" "}
@@ -91,37 +108,87 @@ export default function ChooseUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:contents">
             {/* Left Top Card (01) */}
             <div className="choose-card choose-card-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[0].icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[0].title}</h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[0].text}</p>
+              <div className="choose-icon mb-3 text-[#D4A338]">
+                {reasons[0].icon}
+              </div>
+
+              <h3 className={`${syne.className} text-lg sm:text-xl mb-2`}>
+                {reasons[0].title}
+              </h3>
+
+              <p
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-600 leading-relaxed`}
+              >
+                {reasons[0].text}
+              </p>
             </div>
 
             {/* Right Top Card (02) */}
             <div className="choose-card choose-card-2 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[1].icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[1].title}</h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[1].text}</p>
+              <div className="choose-icon mb-3 text-[#D4A338]">
+                {reasons[1].icon}
+              </div>
+
+              <h3 className={`${syne.className} text-lg sm:text-xl mb-2`}>
+                {reasons[1].title}
+              </h3>
+
+              <p
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-600 leading-relaxed`}
+              >
+                {reasons[1].text}
+              </p>
             </div>
 
             {/* Left Bottom Card (03) */}
             <div className="choose-card choose-card-3 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[2].icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[2].title}</h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[2].text}</p>
+              <div className="choose-icon mb-3 text-[#D4A338]">
+                {reasons[2].icon}
+              </div>
+
+              <h3 className={`${syne.className} text-lg sm:text-xl mb-2`}>
+                {reasons[2].title}
+              </h3>
+
+              <p
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-600 leading-relaxed`}
+              >
+                {reasons[2].text}
+              </p>
             </div>
 
             {/* Right Bottom Card (04) */}
             <div className="choose-card choose-card-4 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[3].icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[3].title}</h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[3].text}</p>
+              <div className="choose-icon mb-3 text-[#D4A338]">
+                {reasons[3].icon}
+              </div>
+
+              <h3 className={`${syne.className} text-lg sm:text-xl mb-2`}>
+                {reasons[3].title}
+              </h3>
+
+              <p
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-600 leading-relaxed`}
+              >
+                {reasons[3].text}
+              </p>
             </div>
 
             {/* Bottom Center Card (05) */}
             <div className="choose-card choose-card-5 md:col-span-2 lg:col-span-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[4].icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[4].title}</h3>
-              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[4].text}</p>
+              <div className="choose-icon mb-3 text-[#D4A338]">
+                {reasons[4].icon}
+              </div>
+
+              <h3 className={`${syne.className} text-lg sm:text-xl mb-2`}>
+                {reasons[4].title}
+              </h3>
+
+              <p
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-600 leading-relaxed`}
+              >
+                {reasons[4].text}
+              </p>
             </div>
           </div>
         </div>

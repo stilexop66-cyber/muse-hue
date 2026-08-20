@@ -2,13 +2,27 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import localFont from "next/font/local";
+
+// Local Fonts Setup
+const syne = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  weight: "800",
+  style: "normal",
+});
+
+const urbanist = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "900",
+  style: "normal",
+});
 
 export default function ContactFormSection() {
   return (
     <div className="w-full bg-white text-neutral-900 pt-12 pb-24">
       {/* Title Header */}
       <div className="text-center mb-12">
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight inline-flex items-center gap-2">
+        <h1 className={`${syne.className} text-3xl md:text-5xl tracking-tight inline-flex items-center gap-2`}>
           <span>Fill Up The</span>
           <span className="bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-black px-4 py-1 rounded-md">
             Form
@@ -17,11 +31,11 @@ export default function ContactFormSection() {
       </div>
 
       <div className="max-w-[1068px] mx-auto px-4">
-        {/* Main Form & Image Container (Width: 1065px, Height: 828px, Padding: 30px, Gap: 45px) */}
+        {/* Main Form & Image Container */}
         <div className="w-full max-w-[1065px] h-[828px] bg-white rounded-2xl p-[30px] shadow-sm border border-neutral-100 mb-6 mx-auto">
           <div className="flex flex-col lg:flex-row gap-[45px] h-full items-stretch justify-between">
             
-            {/* Left Side: Form Fill Layout (Exact dimensions: width 406px, height 765px, gap 32px) */}
+            {/* Left Side: Form Fill Layout */}
             <form 
               className="w-full lg:w-[406px] h-[765px] flex flex-col justify-between gap-[32px] shrink-0" 
               onSubmit={(e) => e.preventDefault()}
@@ -29,80 +43,80 @@ export default function ContactFormSection() {
               <div className="flex flex-col gap-[32px] flex-1">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                    <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                       First Name
                     </label>
                     <input
                       type="text"
                       placeholder="abc"
-                      className="w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white"
+                      className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white`}
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                    <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                       Last Name
                     </label>
                     <input
                       type="text"
                       placeholder="abc"
-                      className="w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white"
+                      className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white`}
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                  <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                     Email
                   </label>
                   <input
                     type="email"
                     placeholder="abc@gmail.com"
-                    className="w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white"
+                    className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white`}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                  <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                     Phone
                   </label>
                   <input
                     type="tel"
                     placeholder="abc"
-                    className="w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white"
+                    className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white`}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                  <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                     Preferable Time Slot
                   </label>
                   <input
                     type="text"
                     placeholder="abc"
-                    className="w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white"
+                    className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white`}
                   />
                 </div>
 
                 <div className="flex-1 flex flex-col">
-                  <label className="block text-[10px] font-bold text-neutral-500 uppercase mb-1 tracking-wider">
+                  <label className={`${syne.className} block text-[10px] text-neutral-500 uppercase mb-1 tracking-wider`}>
                     Message
                   </label>
                   <textarea
                     placeholder="Text us ..."
-                    className="w-full flex-1 px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white resize-none"
+                    className={`${urbanist.className} w-full flex-1 px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E5B548] text-xs bg-white resize-none`}
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-neutral-950 font-bold text-xs shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-1 w-fit shrink-0"
+                className={`${syne.className} px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-neutral-950 text-xs shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-1 w-fit shrink-0`}
               >
                 Submit ↗
               </button>
             </form>
 
-            {/* Right Side: Image Box (Width 556px, Height 768px) */}
+            {/* Right Side: Image Box */}
             <div className="relative rounded-xl overflow-hidden w-full lg:w-[556px] h-[768px] shrink-0 mx-auto">
               <Image
                 src="/images/hair-styling.jpg"
@@ -117,8 +131,8 @@ export default function ContactFormSection() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                   <div>
-                    <h3 className="font-bold text-sm">Office Location</h3>
-                    <p className="text-[11px] text-neutral-200 leading-tight">
+                    <h3 className={`${syne.className} text-sm`}>Office Location</h3>
+                    <p className={`${urbanist.className} text-[11px] text-neutral-200 leading-tight`}>
                       PLOT NO - AB 36, PRE-E/36024, STREET NO - 89,
                       <br />
                       ACTION AREA - I, NEWTOWN KOLKATA - 700156
@@ -142,19 +156,10 @@ export default function ContactFormSection() {
               </svg>
             </div>
             <div>
-              <h4 
-                className="text-neutral-900"
-                style={{
-                  fontFamily: 'Syne, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '40px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%'
-                }}
-              >
+              <h4 className={`${syne.className} text-neutral-900 text-[25px] leading-none`}>
                 Location
               </h4>
-              <p className="text-xs text-neutral-500 mt-1">New Town, Kolkata</p>
+              <p className={`${urbanist.className} text-xs text-neutral-500 mt-1`}>New Town, Kolkata</p>
             </div>
           </div>
 
@@ -166,19 +171,10 @@ export default function ContactFormSection() {
               </svg>
             </div>
             <div>
-              <h4 
-                className="text-neutral-900"
-                style={{
-                  fontFamily: 'Syne, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '40px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%'
-                }}
-              >
+              <h4 className={`${syne.className} text-neutral-900 text-[25px] leading-none`}>
                 Phone
               </h4>
-              <p className="text-xs text-neutral-500 mt-1">+91-9073706968</p>
+              <p className={`${urbanist.className} text-xs text-neutral-500 mt-1`}>+91-9073706968</p>
             </div>
           </div>
 
@@ -190,19 +186,10 @@ export default function ContactFormSection() {
               </svg>
             </div>
             <div>
-              <h4 
-                className="text-neutral-900"
-                style={{
-                  fontFamily: 'Syne, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '40px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%'
-                }}
-              >
+              <h4 className={`${syne.className} text-neutral-900 text-[25px] leading-none`}>
                 Email
               </h4>
-              <p className="text-xs text-neutral-500 mt-1 break-all">skenterprise@gmail.com</p>
+              <p className={`${urbanist.className} text-xs text-neutral-500 mt-1 break-all`}>skenterprise@gmail.com</p>
             </div>
           </div>
 
@@ -214,19 +201,10 @@ export default function ContactFormSection() {
               </svg>
             </div>
             <div>
-              <h4 
-                className="text-neutral-900"
-                style={{
-                  fontFamily: 'Syne, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '40px',
-                  lineHeight: '100%',
-                  letterSpacing: '0%'
-                }}
-              >
+              <h4 className={`${syne.className} text-neutral-900 text-[25px] leading-none`}>
                 Timing
               </h4>
-              <p className="text-xs text-neutral-500 mt-1">11 A.M. - 8 P.M.</p>
+              <p className={`${urbanist.className} text-xs text-neutral-500 mt-1`}>11 A.M. - 8 P.M.</p>
             </div>
           </div>
         </div>
@@ -239,13 +217,13 @@ export default function ContactFormSection() {
       <div className="relative w-full flex flex-col items-center mt-12">
         <div className="w-full bg-black text-white py-12 flex justify-center">
           <div className="w-full max-w-[1068px] px-4 flex flex-row justify-between items-center pb-28">
-            <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+            <h2 className={`${syne.className} text-2xl md:text-3xl tracking-tight`}>
               Book Your Appointment Now
             </h2>
 
             <Link
               href="/contact"
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-neutral-950 font-bold text-xs shadow-md hover:opacity-90 transition-opacity flex-shrink-0 flex items-center gap-1"
+              className={`${syne.className} px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-neutral-950 text-xs shadow-md hover:opacity-90 transition-opacity flex-shrink-0 flex items-center gap-1`}
             >
               Contact Now <span>↗</span>
             </Link>
@@ -263,7 +241,7 @@ export default function ContactFormSection() {
             />
 
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-6 text-center">
-              <p className="text-2xl md:text-4xl font-bold text-white tracking-wide max-w-2xl leading-relaxed drop-shadow-md">
+              <p className={`${syne.className} text-2xl md:text-4xl text-white tracking-wide max-w-2xl leading-relaxed drop-shadow-md`}>
                 Designing Hair Crafts <br />
                 That Speak Your Style
               </p>
