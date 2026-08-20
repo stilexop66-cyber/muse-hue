@@ -55,75 +55,74 @@ const reasons = [
 
 export default function ChooseUs() {
   return (
-    <section className="choose-section">
-  {/* Heading */}
-  <div className="section-heading">
-    <h2 className="inline-flex items-center justify-center gap-2 flex-wrap">
-      Why Clients{" "}
-      <div className="relative inline-flex items-center justify-center px-4 py-1 mx-1 rounded-md overflow-hidden align-middle">
-        <div className="relative inline-flex items-center justify-center px-8 py-2 mx-1 rounded-md overflow-hidden align-middle">
-  {/* Background Div (No -z-10) */}
-  <div
-    className="absolute inset-0 bg-cover bg-center"
-    style={{ backgroundImage: "url('/images/gold-bg.png')",
-      
-     }}
-  />
-  
-  {/* Text on top */}
-  <span className="relative z-10 text-neutral-900 font-bold">
-    Choose
-  </span>
-</div>
-      </div>{" "}
-      Us
-    </h2>
-  </div>
+    <section className="choose-section w-full py-10 xs:py-12 sm:py-16 px-4 sm:px-6 md:px-8">
+      {/* Heading */}
+      <div className="section-heading text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight inline-flex items-center justify-center gap-2 flex-wrap">
+          Why Clients{" "}
+          <div className="relative inline-flex items-center justify-center px-4 sm:px-8 py-1 sm:py-2 mx-1 rounded-md overflow-hidden align-middle">
+            {/* Background Div */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: "url('/images/gold-bg.png')" }}
+            />
+            {/* Text on top */}
+            <span className="relative z-10 text-neutral-900 font-bold">
+              Choose
+            </span>
+          </div>{" "}
+          Us
+        </h2>
+      </div>
 
       {/* Main Composition */}
-      <div className="choose-wrapper">
-        <div className="choose-container">
+      <div className="choose-wrapper max-w-7xl mx-auto">
+        <div className="choose-container flex flex-col lg:block relative gap-6 sm:gap-8 lg:gap-0">
           {/* Center Arch Image */}
-          <div className="choose-image">
+          <div className="choose-image w-full max-w-[320px] sm:max-w-[380px] lg:max-w-none mx-auto mb-6 lg:mb-0">
             <img
               src="/images/why-choose-us.jpg"
               alt="Muse & Hue salon"
+              className="w-full h-auto object-cover rounded-2xl lg:rounded-none"
             />
           </div>
 
-          {/* Left Top Card (01) */}
-          <div className="choose-card choose-card-1">
-            <div className="choose-icon">{reasons[0].icon}</div>
-            <h3>{reasons[0].title}</h3>
-            <p>{reasons[0].text}</p>
-          </div>
+          {/* Grid Layout for Mobile/Tablet Screens, CSS Class Positioning on Desktop */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:contents">
+            {/* Left Top Card (01) */}
+            <div className="choose-card choose-card-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
+              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[0].icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[0].title}</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[0].text}</p>
+            </div>
 
-          {/* Right Top Card (02) */}
-          <div className="choose-card choose-card-2">
-            <div className="choose-icon">{reasons[1].icon}</div>
-            <h3>{reasons[1].title}</h3>
-            <p>{reasons[1].text}</p>
-          </div>
+            {/* Right Top Card (02) */}
+            <div className="choose-card choose-card-2 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
+              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[1].icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[1].title}</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[1].text}</p>
+            </div>
 
-          {/* Left Bottom Card (03) */}
-          <div className="choose-card choose-card-3">
-            <div className="choose-icon">{reasons[2].icon}</div>
-            <h3>{reasons[2].title}</h3>
-            <p>{reasons[2].text}</p>
-          </div>
+            {/* Left Bottom Card (03) */}
+            <div className="choose-card choose-card-3 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
+              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[2].icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[2].title}</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[2].text}</p>
+            </div>
 
-          {/* Right Bottom Card (04) */}
-          <div className="choose-card choose-card-4">
-            <div className="choose-icon">{reasons[3].icon}</div>
-            <h3>{reasons[3].title}</h3>
-            <p>{reasons[3].text}</p>
-          </div>
+            {/* Right Bottom Card (04) */}
+            <div className="choose-card choose-card-4 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
+              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[3].icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[3].title}</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[3].text}</p>
+            </div>
 
-          {/* Bottom Center Card (05) */}
-          <div className="choose-card choose-card-5">
-            <div className="choose-icon">{reasons[4].icon}</div>
-            <h3>{reasons[4].title}</h3>
-            <p>{reasons[4].text}</p>
+            {/* Bottom Center Card (05) */}
+            <div className="choose-card choose-card-5 md:col-span-2 lg:col-span-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
+              <div className="choose-icon mb-3 text-[#D4A338]">{reasons[4].icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold mb-2">{reasons[4].title}</h3>
+              <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{reasons[4].text}</p>
+            </div>
           </div>
         </div>
       </div>
