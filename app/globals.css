@@ -1089,7 +1089,7 @@ img {
 .you-deserve-line {
   font-size: clamp(3.2rem, 8.2vw, 8.2rem);
   line-height: 0.9;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.0em;
   white-space: nowrap;
 }
 
