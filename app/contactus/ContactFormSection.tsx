@@ -32,7 +32,8 @@ export default function ContactFormSection() {
       <div className="max-w-[1068px] mx-auto px-4">
         {/* Main Form & Image Container */}
         <div className="w-full bg-white rounded-2xl p-4 sm:p-6 lg:p-[30px] shadow-sm border border-neutral-100 mb-6 mx-auto">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-[45px] items-stretch justify-between">
+          {/* FIX 1: Changed items-stretch to items-start for mobile */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-[45px] items-start lg:items-stretch justify-between">
             
             {/* Left Side: Form */}
             <form 
@@ -117,12 +118,16 @@ export default function ContactFormSection() {
             </form>
 
             {/* Right Side: Image Box */}
-            <div className="relative rounded-xl overflow-hidden w-full lg:w-[556px] min-h-[300px] sm:min-h-[400px] lg:min-h-full shrink-0">
+            {/* FIX 2: Controlled mobile heights (h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[550px]) */}
+            <div className="relative rounded-xl overflow-hidden w-full lg:w-[556px] h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[550px] shrink-0">
               <Image
                 src="/images/hair-styling.jpg"
                 alt="Office Location Background"
                 fill
+                /* FIX 3: Explicit sizes prevents layout shifts during Next.js image optimization */
+                sizes="(max-width: 1024px) 100vw, 556px"
                 className="object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-4 sm:p-6 text-white">
                 <div className="flex items-start gap-2">
@@ -237,6 +242,7 @@ export default function ContactFormSection() {
               src="/images/appointment.jpg"
               alt="Designing Hair Crafts That Speak Your Style"
               fill
+              sizes="(max-width: 1024px) 100vw, 1068px"
               className="object-cover object-center"
             />
 
