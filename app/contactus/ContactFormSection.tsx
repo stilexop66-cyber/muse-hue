@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 
 // Local Fonts Setup
 const syne = localFont({
-  src: "../fonts/Fiorello CG Condensed Regular/Syne-ExtraBold.ttf",
+  src: "../fonts/Fiorello CG Condensed Regular/Syne-Bold.ttf",
   weight: "800",
   style: "normal",
 });
