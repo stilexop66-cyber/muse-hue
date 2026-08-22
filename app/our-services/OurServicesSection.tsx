@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
 
+// Local Fonts Setup
 const syne = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Syne-Bold.ttf",
   weight: "800",
@@ -149,7 +150,7 @@ const getItemGap = (title: string): string => {
     title === "Beard & Grooming" ||
     title === "Skin & Facial"
   ) {
-    return "gap-3 sm:gap-5";
+    return "gap-4 sm:gap-5";
   }
   return "gap-2.5 sm:gap-3";
 };
@@ -158,7 +159,7 @@ export default function OurServicesSection() {
   const renderCard = (category: ServiceCategory) => (
     <div
       key={category.title}
-      className={`w-full max-w-[504px] p-6 sm:p-10 lg:pt-[80px] lg:pr-[80px] lg:pb-[80px] lg:pl-[40px] bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col justify-between relative ${getDesktopMinCardHeight(
+      className={`w-full max-w-[504px] p-6 sm:p-8 lg:pt-[80px] lg:pr-[80px] lg:pb-[80px] lg:pl-[40px] bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col justify-between relative ${getDesktopMinCardHeight(
         category.title
       )}`}
     >
@@ -193,7 +194,7 @@ export default function OurServicesSection() {
           </div>
         </div>
 
-        {/* Service Items List */}
+        {/* Service Items Box */}
         <div
           className={`flex flex-col mb-8 sm:mb-10 w-full max-w-[367px] ${getItemGap(
             category.title
@@ -227,7 +228,7 @@ export default function OurServicesSection() {
         </div>
       </div>
 
-      {/* Action Button */}
+      {/* Button */}
       <div className="pt-2 sm:pt-4">
         <Link
           href="/contact"
@@ -240,7 +241,7 @@ export default function OurServicesSection() {
   );
 
   return (
-    <section className="bg-[#FAF8F5] text-neutral-900 py-12 sm:py-16 px-4 md:px-8">
+    <section className="bg-[#FAF8F5] text-neutral-900 py-12 sm:py-16 px-4 md:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Title Header */}
         <div className="flex justify-center items-center gap-2 sm:gap-3 mb-10 sm:mb-16">
@@ -258,7 +259,7 @@ export default function OurServicesSection() {
           </div>
         </div>
 
-        {/* Column Layout Container */}
+        {/* 2-Column Wrapper */}
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-[40px] justify-center items-center lg:items-start w-full">
           {/* Left Column */}
           <div className="flex flex-col gap-6 sm:gap-[40px] w-full lg:w-auto items-center">
