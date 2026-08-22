@@ -47,10 +47,19 @@ export default function Speciality() {
           </h2>
         </div>
 
-        <div className="founder-wrapper">
-          <div className="founder-box">
-            <div className="quote quote-left">"</div>
-            <p className={`${urbanist.className} founder-text text-sm sm:text-base leading-relaxed`}>
+        <div className="founder-wrapper max-w-[1000px] mx-auto px-4 sm:px-8">
+          <div className="founder-box relative pt-6 pb-12 sm:pt-10 sm:pb-16">
+            {/* Opening Quote Image */}
+            <div className="absolute -top-6 sm:-top-10 left-0 w-12 sm:w-16 lg:w-20 aspect-[1/1] pointer-events-none select-none">
+              <Image 
+                src="/images/quote.png" 
+                alt="Opening Quote" 
+                fill 
+                className="object-contain object-left-top"
+              />
+            </div>
+
+            <p className={`${urbanist.className} founder-text text-sm sm:text-base leading-relaxed italic`}>
               When I set out to build this salon, I envisioned far more than just
               a place to get a haircut or a facial. I wanted to create a welcoming
               sanctuary where luxury meets genuine personal connection—a space
@@ -64,7 +73,16 @@ export default function Speciality() {
               our carefully sourced, nourishing product lines to our serene
               interiors, every detail is curated with your well-being in mind.
             </p>
-            <div className="quote quote-right">"</div>
+
+            {/* Closing Quote Image */}
+            <div className="absolute -bottom-6 sm:-bottom-10 right-0 w-12 sm:w-16 lg:w-20 aspect-[1/1] pointer-events-none select-none">
+              <Image 
+                src="/images/quote (1).png" 
+                alt="Closing Quote" 
+                fill 
+                className="object-contain object-right-bottom"
+              />
+            </div>
           </div>
         </div>
       </section>
