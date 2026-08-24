@@ -1,7 +1,7 @@
-import { HomeHero } from "./home/HomeHero";
-import { OurStory } from "./home/OurStory";
-import { SweetMemoriesOne } from "./home/SweetMemoriesOne";
-import { SweetMemoriesTwo } from "./home/SweetMemoriesTwo";
+import { HomeHero } from './HomeHero';
+import { OurStory } from './OurStory';
+import { SweetMemoriesOne } from './SweetMemoriesOne';
+import { SweetMemoriesTwo } from './SweetMemoriesTwo';
 
 export default function HomePage() {
   return (
