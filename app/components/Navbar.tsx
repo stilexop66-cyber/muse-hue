@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import localFont from "next/font/local";
 
 const urbanist = localFont({
-  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-regular.ttf",
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Regular.ttf",
   weight: "900",
   style: "normal",
 });
