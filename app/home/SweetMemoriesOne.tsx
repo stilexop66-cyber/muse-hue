@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import localFont from 'next/font/local';
+import Link from 'next/link'; 
 
 // Local Fonts Setup
 const syne = localFont({
@@ -71,10 +72,11 @@ export const SweetMemoriesOne: React.FC = () => {
               src="/images/gold-bg.png"
               alt=""
               fill
-              className="object-cover z-0"
+              sizes="200px"
+              className="absolute inset-0 w-full h-full object-cover z-0"
               priority
             />
-            <span className={`${syne.className} relative z-10 text-neutral-900`}>
+            <span className={`${syne.className} relative z-10 text-neutral-900 leading-none`}>
               Memories
             </span>
           </div>
@@ -95,7 +97,8 @@ export const SweetMemoriesOne: React.FC = () => {
                   src="/images/gold-bg.png"
                   alt=""
                   fill
-                  className="object-cover z-0 rounded-full"
+                  sizes="40px"
+                  className="absolute inset-0 w-full h-full object-cover z-0 rounded-full"
                 />
                 <Image
                   src={service.icon}
@@ -114,17 +117,22 @@ export const SweetMemoriesOne: React.FC = () => {
               </p>
 
               {/* View More Pill Button */}
-              <button className={`${syne.className} relative inline-flex items-center justify-center px-6 py-2.5 rounded-full text-xs overflow-hidden group shadow-sm text-neutral-900`}>
-                <Image
-                  src="/images/gold-bg.png"
-                  alt=""
-                  fill
-                  className="object-cover z-0 rounded-full group-hover:scale-105 transition-transform duration-300"
-                />
-                <span className="relative z-10 flex items-center gap-1">
-                  View More ↗
-                </span>
-              </button>
+{/* View More Pill Button */}
+<Link
+  href="/our-services"
+  className={`${syne.className} inline-flex items-center justify-center px-6 py-2 rounded-full text-xs font-semibold text-neutral-900 shadow-none border-0 outline-none select-none transition-transform active:scale-95`}
+  style={{
+    backgroundImage: `url('/images/gold-bg.png')`,
+    backgroundSize: '100% 100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    WebkitAppearance: 'none',
+  }}
+>
+  <span className="flex items-center gap-1 leading-none py-0.5">
+    View More ↗
+  </span>
+</Link>
             </div>
 
             {/* Image Column */}
@@ -145,14 +153,15 @@ export const SweetMemoriesOne: React.FC = () => {
 
         {/* ================= BOTTOM BUTTON ================= */}
         <div className="text-center pt-4">
-          <button className={`${syne.className} relative inline-flex items-center justify-center px-9 py-3 rounded-full text-sm overflow-hidden group shadow-md text-neutral-900`}>
+          <button className={`${syne.className} relative inline-flex items-center justify-center px-9 py-3 rounded-full text-sm overflow-hidden group shadow-md text-neutral-900 transition-transform active:scale-95`}>
             <Image
               src="/images/gold-bg.png"
               alt=""
               fill
-              className="object-cover z-0 rounded-full group-hover:scale-105 transition-transform duration-300"
+              sizes="250px"
+              className="absolute inset-0 w-full h-full object-cover z-0 rounded-full group-hover:scale-105 transition-transform duration-300"
             />
-            <span className="relative z-10 flex items-center gap-2">
+            <span className="relative z-10 flex items-center gap-2 leading-none">
               Enter Care →
             </span>
           </button>

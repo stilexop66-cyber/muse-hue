@@ -17,6 +17,14 @@ const urbanist = localFont({
   style: "normal",
 });
 
+// Pure CSS Gold Texture constant to ensure 0 white borders & perfect edge scaling
+const GOLD_STYLE: React.CSSProperties = {
+  background: 'linear-gradient(135deg, #e6c46e 0%, #fef1c9 45%, #d49e35 70%, #f6da89 100%)',
+  border: 'none',
+  outline: 'none',
+  boxShadow: 'none',
+};
+
 interface GalleryItem {
   id: number;
   type: "photo" | "video";
@@ -48,58 +56,40 @@ export const SweetMemoriesTwo: React.FC = () => {
         {/* ================= HEADING ================= */}
         <h2 className={`${syne.className} text-3xl md:text-5xl mb-8 flex items-center justify-center gap-2`}>
           Our Sweet{" "}
-          <div className="relative inline-flex items-center justify-center px-5 py-1.5 rounded-md overflow-hidden align-middle shadow-sm">
-            <Image
-              src="/images/gold-bg.png"
-              alt=""
-              fill
-              className="object-cover z-0"
-              priority
-            />
-            <span className={`${syne.className} relative z-10 text-neutral-900`}>
-              Memories
-            </span>
-          </div>
+          <span 
+            className={`${syne.className} inline-flex items-center justify-center px-5 py-1.5 rounded-md text-neutral-900 leading-none shadow-sm select-none`}
+            style={GOLD_STYLE}
+          >
+            Memories
+          </span>
         </h2>
 
         {/* ================= PHOTOS / VIDEOS TOGGLE ================= */}
         <div className="flex items-center justify-center p-1 bg-zinc-100/80 rounded-full mb-12 border border-zinc-200/60">
           <button
+            type="button"
             onClick={() => setActiveTab("photos")}
-            className={`${syne.className} relative px-7 py-2 rounded-full text-xs transition-all duration-300 overflow-hidden ${
+            className={`${syne.className} px-7 py-2 rounded-full text-xs transition-all duration-300 border-0 outline-none leading-none select-none ${
               activeTab === "photos"
                 ? "text-neutral-900 shadow-sm"
                 : "text-zinc-600 hover:text-zinc-900"
             }`}
+            style={activeTab === "photos" ? GOLD_STYLE : undefined}
           >
-            {activeTab === "photos" && (
-              <Image
-                src="/images/gold-bg.png"
-                alt=""
-                fill
-                className="object-cover z-0 rounded-full"
-              />
-            )}
-            <span className="relative z-10">Photos</span>
+            Photos
           </button>
 
           <button
+            type="button"
             onClick={() => setActiveTab("videos")}
-            className={`${syne.className} relative px-7 py-2 rounded-full text-xs transition-all duration-300 overflow-hidden ${
+            className={`${syne.className} px-7 py-2 rounded-full text-xs transition-all duration-300 border-0 outline-none leading-none select-none ${
               activeTab === "videos"
                 ? "text-neutral-900 shadow-sm"
                 : "text-zinc-600 hover:text-zinc-900"
             }`}
+            style={activeTab === "videos" ? GOLD_STYLE : undefined}
           >
-            {activeTab === "videos" && (
-              <Image
-                src="/images/gold-bg.png"
-                alt=""
-                fill
-                className="object-cover z-0 rounded-full"
-              />
-            )}
-            <span className="relative z-10">Videos</span>
+            Videos
           </button>
         </div>
 
@@ -188,7 +178,8 @@ export const SweetMemoriesTwo: React.FC = () => {
 
               <Link
                 href="/contact"
-                className={`${syne.className} px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E5B548] via-[#F3CE6D] to-[#D89F30] text-neutral-950 text-xs shadow-md hover:opacity-90 transition-opacity flex-shrink-0 flex items-center gap-1`}
+                className={`${syne.className} px-6 py-2.5 rounded-full text-neutral-950 text-xs shadow-md hover:opacity-90 transition-opacity flex-shrink-0 flex items-center gap-1 leading-none select-none`}
+                style={GOLD_STYLE}
               >
                 Contact Now <span>↗</span>
               </Link>

@@ -15,6 +15,14 @@ const urbanist = localFont({
   style: "normal",
 });
 
+// Pure CSS Gold Metallic Texture
+const GOLD_STYLE: React.CSSProperties = {
+  background: 'linear-gradient(135deg, #e6c46e 0%, #fef1c9 45%, #d49e35 70%, #f6da89 100%)',
+  border: 'none',
+  outline: 'none',
+  boxShadow: 'none',
+};
+
 const addOns = [
   "Hair Treatments",
   "Skin Treatments",
@@ -31,15 +39,12 @@ export default function AddOnSection() {
         <span className={`${syne.className} text-3xl sm:text-4xl md:text-5xl text-[#1A1A1A] tracking-tight`}>
           Add
         </span>
-        <div className="relative px-4 sm:px-6 py-1.5 sm:py-2 rounded-sm shadow-sm overflow-hidden flex items-center justify-center min-w-[65px] sm:min-w-[80px]">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/gold-bg.png')" }}
-          />
-          <span className={`${syne.className} text-[#111111] text-3xl sm:text-4xl md:text-5xl relative z-10`}>
-            On
-          </span>
-        </div>
+        <span 
+          className={`${syne.className} text-[#111111] text-3xl sm:text-4xl md:text-5xl px-4 sm:px-6 py-1.5 sm:py-2 rounded-sm shadow-sm inline-flex items-center justify-center min-w-[65px] sm:min-w-[80px] leading-none select-none`}
+          style={GOLD_STYLE}
+        >
+          On
+        </span>
       </div>
 
       {/* 2. Add On Cards Grid */}
@@ -49,11 +54,11 @@ export default function AddOnSection() {
           {addOns.slice(0, 3).map((item, index) => (
             <div
               key={index}
-              className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center border-t-[4px] border-transparent overflow-hidden"
+              className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center overflow-hidden"
             >
               <div
-                className="absolute top-0 left-0 right-0 h-[4px] bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/gold-bg.png')" }}
+                className="absolute top-0 left-0 right-0 h-[4px]"
+                style={GOLD_STYLE}
               />
               <h3 className={`${syne.className} text-base sm:text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
@@ -67,11 +72,11 @@ export default function AddOnSection() {
           {addOns.slice(3).map((item, index) => (
             <div
               key={index}
-              className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center border-t-[4px] border-transparent overflow-hidden"
+              className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center overflow-hidden"
             >
               <div
-                className="absolute top-0 left-0 right-0 h-[4px] bg-cover bg-center"
-                style={{ backgroundImage: "url('/images/gold-bg.png')" }}
+                className="absolute top-0 left-0 right-0 h-[4px]"
+                style={GOLD_STYLE}
               />
               <h3 className={`${syne.className} text-base sm:text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
@@ -92,15 +97,10 @@ export default function AddOnSection() {
 
             <Link
               href="/contact"
-              className={`${syne.className} relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md overflow-hidden group flex-shrink-0`}
+              className={`${syne.className} px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md flex-shrink-0 inline-flex items-center gap-1.5 font-bold leading-none transition-transform active:scale-95`}
+              style={GOLD_STYLE}
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                style={{ backgroundImage: "url('/images/gold-bg.png')" }}
-              />
-              <span className="relative z-10 flex items-center gap-1.5 font-bold">
-                Contact Now <span>↗</span>
-              </span>
+              Contact Now <span>↗</span>
             </Link>
           </div>
         </div>
