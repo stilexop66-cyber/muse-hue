@@ -12,14 +12,25 @@ export default function AboutHero() {
     <section className="w-full bg-white">
       {/* ================= HERO CONTAINER ================= */}
       <div className="relative h-[320px] sm:h-[420px] md:h-[500px] lg:h-[560px] w-full overflow-hidden bg-[#15110d]">
-        {/* Full-width Background Image */}
+        
+        {/* Desktop / Tablet Hero Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="hidden sm:block absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
               "url('/images/8190b3e0a3f2389aa305a8703fe2551571018f42.png')",
           }}
         />
+
+        {/* Mobile Phone Hero Image */}
+        <div
+          className="block sm:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage:
+              "url('/images/h5.png')", // <--- Add your phone image path here
+          }}
+        />
+
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/10" />
 
@@ -41,13 +52,6 @@ export default function AboutHero() {
               backgroundClip: "text",
               WebkitTextFillColor: "transparent",
               letterSpacing: "0.1em",
-              // Fluid font-size: flat at 96px (= old lg:text-8xl) from a
-              // 1024px viewport up, so desktop is byte-identical to before.
-              // Below that it scales continuously down to 30px (= old
-              // text-3xl) at a 375px viewport, instead of jumping at
-              // breakpoints. This also fully replaces the "xs:" class that
-              // was below — "xs" isn't a default Tailwind breakpoint, so
-              // that class was never actually firing.
               fontSize: "clamp(1.875rem, -0.51rem + 10.17vw, 6rem)",
             }}
           >
@@ -56,11 +60,7 @@ export default function AboutHero() {
               YOU DESERVE TO LOOK
             </div>
 
-            {/* Second statement — pl-[1.3333em] is exactly the 128px/96px
-                ratio from the original lg: breakpoint, riding on the same
-                fluid font-size above. That keeps the stagger in desktop's
-                exact proportion at any screen width, not just at the old
-                sm/md/lg checkpoints. */}
+            {/* Second statement */}
             <div className="you-deserve-line second-line leading-tight pl-[1.3333em]">
               AND FEEL THE BEST
             </div>

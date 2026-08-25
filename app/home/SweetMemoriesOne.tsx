@@ -37,7 +37,7 @@ const services: ServiceItem[] = [
     title: "Grooming Services",
     description:
       "Precision beard care, modern haircuts, and clean grooming for men aiming for sharp, sleek appearances.",
-    image: "/images/sa.jpg",
+    image: "/images/sa1.jpg",
     icon: "/images/beard2-icon.png",
     reversed: true,
   },
@@ -45,7 +45,7 @@ const services: ServiceItem[] = [
     title: "Waxing Services",
     description:
       "Smooth, gentle skin treatments designed to offer long-lasting silkiness with high hygiene standards.",
-    image: "/images/sa.jpg",
+    image: "/images/sa2.jpg",
     icon: "/images/beard2-icon.png",
     reversed: false,
   },
@@ -53,7 +53,7 @@ const services: ServiceItem[] = [
     title: "Makeup & Facial",
     description:
       "From glowing facial therapies to party/event makeup, crafted to enhance your natural beauty.",
-    image: "/images/sa.jpg",
+    image: "/images/sa3.jpg",
     icon: "/images/beard2-icon.png",
     reversed: true,
   },

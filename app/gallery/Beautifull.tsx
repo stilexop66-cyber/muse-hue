@@ -28,13 +28,13 @@ interface GalleryItem {
 }
 
 const galleryData: GalleryItem[] = [
-  { id: 1, type: "photo", src: "/images/d1.jpg", alt: "Main Chevrolet Decorated Car" },
-  { id: 2, type: "photo", src: "/images/d2.jpg", alt: "Canopy Bed Flower Decoration" },
-  { id: 3, type: "photo", src: "/images/d3.jpg", alt: "Side View Decorated Car" },
-  { id: 4, type: "photo", src: "/images/d4.jpg", alt: "Night Entrance Stage" },
-  { id: 5, type: "photo", src: "/images/d5.jpg", alt: "Groom Portrait" },
-  { id: 6, type: "photo", src: "/images/d6.jpg", alt: "Royal Stage Chair" },
-  { id: 7, type: "photo", src: "/images/d7.jpg", alt: "Heart Rose Petal Bed Decor" },
+  { id: 1, type: "photo", src: "/images/story-main.jpg", alt: "Main Chevrolet Decorated Car" },
+  { id: 2, type: "photo", src: "/images/gal-5.jpg", alt: "Canopy Bed Flower Decoration" },
+  { id: 3, type: "photo", src: "/images/gal-3.jpg", alt: "Side View Decorated Car" },
+  { id: 4, type: "photo", src: "/images/gal-1.jpg", alt: "Night Entrance Stage" },
+  { id: 5, type: "photo", src: "/images/gal-6.jpg", alt: "Groom Portrait" },
+  { id: 6, type: "photo", src: "/images/gal-41.jpg", alt: "Royal Stage Chair" },
+  { id: 7, type: "photo", src: "/images/gal-2.jpg", alt: "Heart Rose Petal Bed Decor" },
 ];
 
 export const Beautifull: React.FC = () => {

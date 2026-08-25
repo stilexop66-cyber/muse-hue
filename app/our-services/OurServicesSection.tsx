@@ -126,31 +126,13 @@ const rightColumnData: ServiceCategory[] = [
   },
 ];
 
-// Preserves desktop layout while removing hardcoded min-height on mobile/tablet
-const getDesktopMinCardHeight = (title: string): string => {
-  if (
-    title === "Hair Services" ||
-    title === "Beard & Grooming" ||
-    title === "Skin & Facial"
-  ) {
-    return "lg:min-h-[1118px]";
-  }
-  if (title === "Waxing Services") {
-    return "lg:min-h-[918px]";
-  }
-  if (title === "Nail Services") {
-    return "lg:min-h-[838px]";
-  }
-  return "lg:min-h-[620px]";
-};
-
 const getItemGap = (title: string): string => {
   if (
     title === "Hair Services" ||
     title === "Beard & Grooming" ||
     title === "Skin & Facial"
   ) {
-    return "gap-4 sm:gap-5";
+    return "gap-3 sm:gap-4";
   }
   return "gap-2.5 sm:gap-3";
 };
@@ -159,77 +141,73 @@ export default function OurServicesSection() {
   const renderCard = (category: ServiceCategory) => (
     <div
       key={category.title}
-      className={`w-full max-w-[504px] p-6 sm:p-8 lg:pt-[80px] lg:pr-[80px] lg:pb-[80px] lg:pl-[40px] bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col justify-between relative ${getDesktopMinCardHeight(
-        category.title
-      )}`}
+      className="w-full max-w-[504px] p-6 sm:p-8 lg:p-10 bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col relative"
     >
-      <div>
-        {/* Category Icon Badge */}
-        <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#E5B548] via-[#F3CE6D] to-[#D89F30] flex items-center justify-center mb-6 shadow-md overflow-hidden">
-          <div className="relative w-7 h-7 sm:w-9 sm:h-9">
-            <Image
-              src={category.iconSrc}
-              alt={`${category.title} Icon`}
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Title & Floral Accent */}
-        <div className="relative mb-6 sm:mb-8 flex items-center justify-between">
-          <h3
-            className={`${syne.className} text-2xl sm:text-3xl md:text-4xl tracking-tight text-neutral-900 max-w-[65%] leading-tight`}
-          >
-            {category.title}
-          </h3>
-
-          <div className="relative w-16 h-16 sm:w-24 sm:h-24 flex-shrink-0">
-            <Image
-              src="/images/floral-leaf.png"
-              alt="Floral Leaf"
-              fill
-              className="object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Service Items Box */}
-        <div
-          className={`flex flex-col mb-8 sm:mb-10 w-full max-w-[367px] ${getItemGap(
-            category.title
-          )}`}
-        >
-          {category.items.map((item, itemIdx) => (
-            <div key={itemIdx} className="pb-2 border-b border-neutral-200">
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] flex items-center justify-center flex-shrink-0 shadow-sm">
-                  <svg
-                    className="w-3 h-3 text-neutral-950 stroke-[3]"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <span
-                  className={`${urbanist.className} text-xs sm:text-sm text-neutral-800`}
-                >
-                  {item}
-                </span>
-              </div>
-            </div>
-          ))}
+      {/* Category Icon Badge */}
+      <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#E5B548] via-[#F3CE6D] to-[#D89F30] flex items-center justify-center mb-6 shadow-md overflow-hidden">
+        <div className="relative w-7 h-7 sm:w-9 sm:h-9">
+          <Image
+            src={category.iconSrc}
+            alt={`${category.title} Icon`}
+            fill
+            className="object-contain"
+          />
         </div>
       </div>
 
+      {/* Title & Floral Accent */}
+      <div className="relative mb-6 sm:mb-8 flex items-center justify-between">
+        <h3
+          className={`${syne.className} text-2xl sm:text-3xl md:text-4xl tracking-tight text-neutral-900 max-w-[65%] leading-tight`}
+        >
+          {category.title}
+        </h3>
+
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+          <Image
+            src="/images/floral-leaf.png"
+            alt="Floral Leaf"
+            fill
+            className="object-contain"
+          />
+        </div>
+      </div>
+
+      {/* Service Items Box */}
+      <div
+        className={`flex flex-col mb-6 sm:mb-8 w-full max-w-[367px] ${getItemGap(
+          category.title
+        )}`}
+      >
+        {category.items.map((item, itemIdx) => (
+          <div key={itemIdx} className="pb-2 border-b border-neutral-200">
+            <div className="flex items-center gap-3">
+              <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] flex items-center justify-center flex-shrink-0 shadow-sm">
+                <svg
+                  className="w-3 h-3 text-neutral-950 stroke-[3]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+              <span
+                className={`${urbanist.className} text-xs sm:text-sm text-neutral-800`}
+              >
+                {item}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* Button */}
-      <div className="pt-2 sm:pt-4">
+      <div>
         <Link
           href="/contact"
           className={`${syne.className} inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] text-neutral-950 font-semibold text-xs shadow-md hover:opacity-90 transition-opacity`}

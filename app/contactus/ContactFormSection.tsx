@@ -32,7 +32,6 @@ export default function ContactFormSection() {
       <div className="max-w-[1068px] mx-auto px-4">
         {/* Main Form & Image Container */}
         <div className="w-full bg-white rounded-2xl p-4 sm:p-6 lg:p-[30px] shadow-sm border border-neutral-100 mb-6 mx-auto">
-          {/* FIX 1: Changed items-stretch to items-start for mobile */}
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-[45px] items-start lg:items-stretch justify-between">
             
             {/* Left Side: Form */}
@@ -118,13 +117,11 @@ export default function ContactFormSection() {
             </form>
 
             {/* Right Side: Image Box */}
-            {/* FIX 2: Controlled mobile heights (h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[550px]) */}
             <div className="relative rounded-xl overflow-hidden w-full lg:w-[556px] h-[280px] sm:h-[380px] lg:h-auto lg:min-h-[550px] shrink-0">
               <Image
                 src="/images/hair-styling.jpg"
                 alt="Office Location Background"
                 fill
-                /* FIX 3: Explicit sizes prevents layout shifts during Next.js image optimization */
                 sizes="(max-width: 1024px) 100vw, 556px"
                 className="object-cover"
                 priority
@@ -214,8 +211,19 @@ export default function ContactFormSection() {
           </div>
         </div>
 
-        {/* Grey Placeholder Box */}
-        <div className="w-full max-w-[1068px] h-[250px] sm:h-[380px] md:h-[559px] bg-[#D9D9D9] rounded-2xl mx-auto mb-12 sm:mb-20" />
+        {/* Google Map Container */}
+        <div className="w-full max-w-[1068px] h-[250px] sm:h-[380px] md:h-[559px] rounded-2xl overflow-hidden mx-auto mb-12 sm:mb-20 shadow-sm border border-neutral-100">
+          <iframe
+            title="Office Location Map"
+            src="https://maps.google.com/maps?q=PLOT%20NO%20-%20AB%2036%2C%20ACTION%20AREA%20-%20I%2C%20NEWTOWN%20KOLKATA%20-%20700156&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </div>
 
       {/* Appointment CTA Banner */}
