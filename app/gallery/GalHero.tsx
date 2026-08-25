@@ -5,15 +5,17 @@ import Image from 'next/image';
 
 export const GalHero: React.FC = () => {
   return (
-    <section className="w-full bg-black leading-none">
-      <Image
-        src="/images/gal-hero.jpg"
-        alt="Muse & Hue Studio Hero"
-        width={1620}
-        height={100} // Approximate reference ratio, Next.js auto-adjusts
-        priority
-        className="w-full h-auto block"
-      />
+    <section className="w-full bg-black flex justify-center items-center overflow-hidden">
+      <div className="relative w-full max-w-[2000px] aspect-[1980/500] md:aspect-[820/400]">
+        <Image
+          src="/images/gal-hero.jpg"
+          alt="Muse & Hue Studio Hero"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
     </section>
   );
 };

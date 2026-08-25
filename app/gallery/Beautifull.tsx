@@ -5,16 +5,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import localFont from 'next/font/local';
 
+// Note: Ensure the folder name in your public/src directory exactly matches "fonts" or "Fonts"
 const syne = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Syne-Bold.ttf",
   weight: "800",
   style: "normal",
+  variable: "--font-syne",
 });
 
 const urbanist = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
   weight: "900",
   style: "normal",
+  variable: "--font-urbanist",
 });
 
 interface GalleryItem {
@@ -81,12 +84,9 @@ export const Beautifull: React.FC = () => {
           </button>
         </div>
 
-        {/* Gallery Asymmetrical Layout Grid */}
+        {/* Gallery Grid */}
         <div className="w-full flex flex-col gap-4 mb-10">
-          
-          {/* TOP ROW: Large Car (Left) + 2 Stacked Cards (Right) */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
-            {/* Top Left: Main Car (d1.jpg) */}
             <div className="md:col-span-7 relative h-[320px] sm:h-[400px] md:h-[450px] rounded-2xl overflow-hidden shadow-sm">
               <Image
                 src={filteredItems[0]?.src || "/images/d1.jpg"}
@@ -96,7 +96,6 @@ export const Beautifull: React.FC = () => {
               />
             </div>
 
-            {/* Top Right: Stacked Canopy Bed (d2.jpg) & Side Car (d3.jpg) */}
             <div className="md:col-span-5 flex flex-col gap-4">
               <div className="relative h-[150px] sm:h-[192px] md:h-[217px] rounded-2xl overflow-hidden shadow-sm">
                 <Image
@@ -117,13 +116,8 @@ export const Beautifull: React.FC = () => {
             </div>
           </div>
 
-          {/* BOTTOM ROW: Adjusted Left Quad + Large Right Heart Bed */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
-            
-            {/* Bottom Left Area */}
             <div className="md:col-span-6 flex flex-col gap-4">
-              
-              {/* Top Side-by-Side Pair: Equal Square Night Stage (d4.jpg) & Groom (d5.jpg) */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-sm">
                   <Image
@@ -144,7 +138,6 @@ export const Beautifull: React.FC = () => {
                 </div>
               </div>
 
-              {/* Bottom Landscape Card: Royal Stage Chair (d6.jpg) */}
               <div className="relative h-[150px] sm:h-[190px] md:h-[200px] w-full rounded-2xl overflow-hidden shadow-sm">
                 <Image
                   src={filteredItems[5]?.src || "/images/d6.jpg"}
@@ -153,10 +146,8 @@ export const Beautifull: React.FC = () => {
                   className="object-cover rounded-2xl"
                 />
               </div>
-
             </div>
 
-            {/* Bottom Right: Heart Rose Petal Bed (d7.jpg) */}
             <div className="md:col-span-6 relative h-[340px] sm:h-[415px] md:h-auto rounded-2xl overflow-hidden shadow-sm">
               <Image
                 src={filteredItems[6]?.src || "/images/d7.jpg"}
@@ -165,18 +156,16 @@ export const Beautifull: React.FC = () => {
                 className="object-cover rounded-2xl"
               />
             </div>
-
           </div>
-
         </div>
 
-        {/* View More Button */}
+        {/* Action Button */}
         <button className={`${syne.className} relative inline-flex items-center justify-center px-7 py-2 rounded-full text-xs overflow-hidden shadow-sm text-neutral-900 mb-14`}>
           <Image src="/images/gold-bg.png" alt="" fill className="object-cover z-0 rounded-full" />
           <span className="relative z-10 flex items-center gap-1">View More ↗</span>
         </button>
 
-        {/* Book Appointment Banner */}
+        {/* Appointment Section */}
         <div className="relative w-full flex flex-col items-center">
           <div className="w-full bg-black text-white pt-8 pb-20 sm:pt-10 sm:pb-24 flex justify-center rounded-t-xl">
             <div className="w-full max-w-[1024px] px-4 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
