@@ -208,7 +208,7 @@ export default function ContactFormSection() {
               <p 
                 className={`${urbanist.className} text-[11px] sm:text-[13px] md:text-xs lg:text-[13px] xl:text-[15px] font-semibold mt-2 whitespace-nowrap bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] bg-clip-text text-transparent`}
               >
-                skenterprise@gmail.com
+                muse0hue@gmail.com
               </p>
             </div>
           </div>
