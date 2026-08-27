@@ -50,7 +50,6 @@ const leftColumnData: ServiceCategory[] = [
       "Hydra Facial",
       "Skin Lightening",
       "De-Tan Treatment",
-      " D-Tan / Lotus / VLCC Facials",
     ],
   },
   {
