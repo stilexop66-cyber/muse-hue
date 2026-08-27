@@ -26,7 +26,7 @@ const leftColumnData: ServiceCategory[] = [
     title: "Hair Services",
     iconSrc: "/images/hair-icon.png",
     items: [
-      "Haircut (Men & Women)",
+      "Haircut (Men, Women & kids)",
       "Hair Styling & Blow Dry",
       "Hair Spa & Treatments",
       "Smoothening",
