@@ -135,7 +135,7 @@ export default function ContactFormSection() {
                   <div>
                     <h3 className={`${syne.className} text-sm`}>Office Location</h3>
                     <p className={`${urbanist.className} text-[11px] text-neutral-200 leading-tight`}>
-                      PLOT NO - AB 36, PRE-E/36024, STREET NO - 89,
+                      PLOT NO - AB 36, PRE-07-0074,
                       <br />
                       ACTION AREA - I, NEWTOWN KOLKATA - 700156
                     </p>
