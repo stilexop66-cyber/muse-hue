@@ -177,7 +177,7 @@ export const SweetMemoriesTwo: React.FC = () => {
               </h2>
 
               <Link
-                href="/contact"
+                href="/contactus"
                 className={`${syne.className} px-6 py-2.5 rounded-full text-neutral-950 text-xs shadow-md hover:opacity-90 transition-opacity flex-shrink-0 flex items-center gap-1 leading-none select-none`}
                 style={GOLD_STYLE}
               >

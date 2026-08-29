@@ -96,7 +96,7 @@ export default function AddOnSection() {
             </h2>
 
             <Link
-              href="/contact"
+              href="/contactus"
               className={`${syne.className} px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md flex-shrink-0 inline-flex items-center gap-1.5 font-bold leading-none transition-transform active:scale-95`}
               style={GOLD_STYLE}
             >
