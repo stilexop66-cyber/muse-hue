@@ -12,9 +12,20 @@ const syne = localFont({
   style: "normal",
 });
 
+const urbanistBold = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Black.ttf",
+  weight: "800",
+  style: "normal",
+});
+
 const urbanistMedium = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Medium.ttf",
   weight: "500",
+  style: "normal",
+});
+const urbanistt = localFont({
+  src: "../fonts/Fiorello CG Condensed Regular/Urbanist-SemiBold.ttf",
+  weight: "200",
   style: "normal",
 });
 
@@ -27,7 +38,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
           
           {/* Column 1: Brand Logo & Title (Left) */}
-          <div className="md:col-span-4 flex flex-col items-start gap-4">
+          <div className="md:col-span-4 flex flex-col items-start gap-3">
             <Image
               src="/images/logo.png" 
               alt="Muse & Hue Logo"
@@ -35,13 +46,16 @@ export default function Footer() {
               height={100}
               className="object-contain"
             />
-            <div className="flex flex-col">
-              <h2 className={`${syne.className} text-xl sm:text-2xl font-semibold tracking-wider text-amber-100`}>
+            <div className="flex flex-col items-start leading-none tracking-tight mt-1">
+              {/* MUSE & HUE (Smaller Gold Gradient) */}
+              <span className={`${urbanistt.className} text-xl sm:text-1xl  tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B]`}>
                 MUSE & HUE
-              </h2>
-              <p className={`${urbanistMedium.className} text-base sm:text-lg font-bold tracking-widest text-amber-200/90`}>
+              </span>
+
+              {/* UNISEX SALON (Bigger Gold Gradient) */}
+              <h1 className={`${urbanistt.className} text-2xl sm:text-3xl md:text-3xl tracking-normal text-transparent bg-clip-text bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] mt-1`}>
                 UNISEX SALON
-              </p>
+              </h1>
             </div>
           </div>
 
@@ -71,7 +85,7 @@ export default function Footer() {
             <h3 className={`${syne.className} text-xl text-white mb-1`}>Join a Newsletter</h3>
             <label htmlFor="newsletter-email" className={`${urbanistMedium.className} text-sm text-white`}>Your Email</label>
             
-            {/* Email Input Field with White Background */}
+            {/* Email Input Field */}
             <div className="relative w-full max-w-sm flex items-center bg-white rounded-full px-4 py-2.5">
               <svg
                 className="w-5 h-5 text-zinc-900 mr-2 flex-shrink-0"
@@ -94,10 +108,10 @@ export default function Footer() {
               />
             </div>
 
-            {/* Know More Button (Tailwind Gold Gradient BG) */}
+            {/* Compact Know More Button */}
             <button
               type="button"
-              className={`${syne.className} relative inline-flex items-center justify-center w-full max-w-sm py-2.5 rounded-full text-xs font-bold text-neutral-900 shadow-md mt-1 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] hover:opacity-90 transition-opacity`}
+              className={`${syne.className} relative inline-flex items-center justify-center w-auto self-start px-6 py-2.5 rounded-full text-xs font-bold text-neutral-900 shadow-md mt-1 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] hover:opacity-90 transition-opacity`}
             >
               <span>Know More</span>
             </button>

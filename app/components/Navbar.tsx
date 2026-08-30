@@ -8,7 +8,7 @@ import localFont from "next/font/local";
 
 const urbanist = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Regular.ttf",
-  weight: "300",
+  weight: "100",
   style: "normal",
 });
 
@@ -51,7 +51,7 @@ export default function Navbar() {
                 className={`${urbanist.className} relative py-1 transition-opacity duration-200 hover:opacity-80`}
               >
                 {/* Gold Gradient Text applied to ALL links */}
-                <span className="inline-block bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] bg-clip-text text-transparent font-bold">
+                <span className="inline-block bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] bg-clip-text text-transparent ">
                   {link.name}
                 </span>
 

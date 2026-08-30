@@ -19,6 +19,7 @@ const urbanistt = localFont({
   weight: "300",
   style: "normal",
 });
+
 const urbanisty = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Urbanist-SemiBold.ttf",
   weight: "600",
@@ -57,9 +58,9 @@ export default function Speciality() {
       </div>
 
       {/* Founder Outer Relative Container */}
-      <div className="w-full max-w-[1025px] mx-auto relative my-12 flex justify-center">
-        {/* Opening Quote Icon (148x148 - Half hidden behind top-left corner) */}
-        <div className="absolute top-0 left-18 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[148px] lg:h-[148px] -translate-x-1/3 -translate-y-1/3 sm:-translate-x-1/2 sm:-translate-y-1/2 z-0 pointer-events-none select-none">
+      <div className="w-full max-w-[1025px] mx-auto relative my-12 flex justify-center px-4 sm:px-0">
+        {/* Opening Quote Icon */}
+        <div className="absolute top-0 left-0 sm:left-4 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[148px] lg:h-[148px] -translate-x-1/3 -translate-y-1/3 sm:-translate-x-1/2 sm:-translate-y-1/2 z-0 pointer-events-none select-none">
           <Image
             src="/images/quote.png"
             alt="Opening Quote"
@@ -68,26 +69,26 @@ export default function Speciality() {
           />
         </div>
 
-       {/* Text Card Div (No Shadow, Pure Flat White Card) */}
-<div className="w-full lg:w-[1025px] h-auto lg:h-[418px] bg-white rounded-2xl shadow-none px-6 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-8 relative z-10 border border-neutral-200 flex items-center justify-center overflow-hidden">
-  <p className={`${urbanistt.className} text-neutral-900 text-[14px] sm:text-[17px] md:text-[19px] lg:text-[21px] xl:text-[22px] leading-relaxed italic text-left`}>
-    When I set out to build this salon, I envisioned far more than just
-    a place to get a haircut or a facial. I wanted to create a welcoming
-    sanctuary where luxury meets genuine personal connection—a space
-    where you can leave the rush of the everyday world behind, take a
-    deep breath, and dedicate time entirely to yourself. True beauty is
-    an art form rooted in individuality. It isn&apos;t about fitting into
-    rigid trends; it&apos;s about discovering what makes you feel confident,
-    radiant, and empowered in your own skin. Every stylist on our team
-    shares this philosophy, combining master-level technique with
-    honest consultations to bring your personal vision to life. From
-    our carefully sourced, nourishing product lines to our serene
-    interiors, every detail is curated with your well-being in mind.
-  </p>
-</div>
+        {/* Text Card Div (No Shadow, Pure Flat White Card) */}
+        <div className="w-full lg:w-[1025px] h-auto lg:h-[418px] bg-white rounded-2xl shadow-none px-6 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-8 relative z-10 border border-neutral-200 flex items-center justify-center overflow-hidden">
+          <p className={`${urbanistt.className} text-neutral-900 text-[14px] sm:text-[17px] md:text-[19px] lg:text-[21px] xl:text-[22px] leading-relaxed italic text-left`}>
+            When I set out to build this salon, I envisioned far more than just
+            a place to get a haircut or a facial. I wanted to create a welcoming
+            sanctuary where luxury meets genuine personal connection—a space
+            where you can leave the rush of the everyday world behind, take a
+            deep breath, and dedicate time entirely to yourself. True beauty is
+            an art form rooted in individuality. It isn't about fitting into
+            rigid trends; it's about discovering what makes you feel confident,
+            radiant, and empowered in your own skin. Every stylist on our team
+            shares this philosophy, combining master-level technique with
+            honest consultations to bring your personal vision to life. From
+            our carefully sourced, nourishing product lines to our serene
+            interiors, every detail is curated with your well-being in mind.
+          </p>
+        </div>
 
-        {/* Closing Quote Icon (148x148 - Half hidden behind bottom-right corner) */}
-        <div className="absolute bottom-0 right-18 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[148px] lg:h-[148px] translate-x-1/3 translate-y-1/3 sm:translate-x-1/2 sm:translate-y-1/2 z-0 pointer-events-none select-none">
+        {/* Closing Quote Icon */}
+        <div className="absolute bottom-0 right-0 sm:right-4 w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] lg:w-[148px] lg:h-[148px] translate-x-1/3 translate-y-1/3 sm:translate-x-1/2 sm:translate-y-1/2 z-0 pointer-events-none select-none">
           <Image
             src="/images/quote (1).png"
             alt="Closing Quote"
@@ -97,12 +98,12 @@ export default function Speciality() {
         </div>
       </div>
 
-      {/* SPECIALITY — desktop values preserved exactly at lg:, scaled below lg */}
+      {/* SPECIALITY SECTION */}
       <section className="w-full bg-white px-4 sm:px-5 py-12 sm:py-16 lg:py-20">
         <div className="text-center mb-10 sm:mb-14 lg:mb-[60px]">
           <h2
             className={`${syne.className} text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-[80px]`}
-            style={{ fontWeight: 700, lineHeight: "100%", letterSpacing: "0%", color: "#1a2228", display: "inline-flex", items: "center", gap: "20px", justifyContent: "center", flexWrap: "wrap", margin: 0 }}
+            style={{ fontWeight: 700, lineHeight: "100%", letterSpacing: "0%", color: "#1a2228", display: "inline-flex", alignItems: "center", gap: "20px", justifyContent: "center", flexWrap: "wrap", margin: 0 }}
           >
             Our{" "}
             <div className="relative inline-flex items-center justify-center px-4 sm:px-6 lg:px-8 py-1 sm:py-2 rounded-md overflow-hidden align-middle bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] shadow-sm">
@@ -177,32 +178,32 @@ export default function Speciality() {
       </div>
 
       {/* BRAND STATEMENT */}
-<section className="brand-statement w-full py-12 sm:py-20 px-4 flex justify-center">
-  <p
-    className={`${urbanisty.className} text-2xl xs:text-3xl sm:text-5xl lg:text-[60px]`}
-    style={{
-      fontStyle: "italic",
-      lineHeight: "100%",
-      letterSpacing: "0%",
-      textAlign: "justify",
-      maxWidth: "1100px",
-      margin: "0 auto",
-      color: "#1a2228",
-    }}
-  >
-    <span
-      className="hidden sm:inline-block w-24 sm:w-36 lg:w-[180px]"
-      style={{
-        height: "4px",
-        backgroundColor: "transparent",
-        verticalAlign: "middle",
-        marginRight: "20px",
-        marginBottom: "12px",
-      }}
-    />
-    AT MUSE & HUE WE BLEND CREATIVITY WITH CARE TO BRING OUT THE BEST IN YOU. OUR EXPERT TEAM IS HERE TO PAMPER YOU WITH PREMIUM SERVICES IN A LUXURIOUS SPACE
-  </p>
-</section>
+      <section className="brand-statement w-full py-12 sm:py-20 px-4 flex justify-center">
+        <p
+          className={`${urbanisty.className} text-2xl xs:text-3xl sm:text-5xl lg:text-[60px]`}
+          style={{
+            fontStyle: "italic",
+            lineHeight: "100%",
+            letterSpacing: "0%",
+            textAlign: "justify",
+            maxWidth: "1100px",
+            margin: "0 auto",
+            color: "#1a2228",
+          }}
+        >
+          <span
+            className="hidden sm:inline-block w-24 sm:w-36 lg:w-[180px]"
+            style={{
+              height: "4px",
+              backgroundColor: "transparent",
+              verticalAlign: "middle",
+              marginRight: "20px",
+              marginBottom: "12px",
+            }}
+          />
+          AT MUSE & HUE WE BLEND CREATIVITY WITH CARE TO BRING OUT THE BEST IN YOU. OUR EXPERT TEAM IS HERE TO PAMPER YOU WITH PREMIUM SERVICES IN A LUXURIOUS SPACE
+        </p>
+      </section>
     </>
   );
 }
