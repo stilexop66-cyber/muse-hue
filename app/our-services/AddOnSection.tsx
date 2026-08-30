@@ -75,43 +75,31 @@ export default function AddOnSection() {
         </div>
       </div>
 
-      {/* 3. Black Banner & Overlapping Image Card */}
-      <div className="relative w-full flex flex-col items-center">
-        {/* Black Horizontal Band */}
-        <div className="w-full bg-black text-white pt-8 pb-20 sm:pt-10 sm:pb-28 flex justify-center">
-          <div className="w-full max-w-[1072px] px-4 sm:px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-            <h2 className={`${syne.className} text-2xl sm:text-3xl md:text-4xl tracking-tight`}>
-              Book Your Appointment Now
-            </h2>
-
-            <Link
-              href="/contactus"
-              className={`${syne.className} px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md flex-shrink-0 inline-flex items-center gap-1.5 font-bold leading-none transition-transform active:scale-95 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
-            >
-              Contact Now <span>↗</span>
-            </Link>
-          </div>
-        </div>
-
-        {/* Overlapping Image Card */}
-        <div className="w-full max-w-[1072px] px-4 -mt-14 sm:-mt-20 md:-mt-24 relative z-10">
-          <div className="relative w-full h-[180px] sm:h-[220px] md:h-[254px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
-            <Image
-              src="/images/appointment.jpg"
-              alt="Designing Hair Crafts That Speak Your Style"
-              fill
-              className="object-cover object-center"
-            />
-
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 sm:p-6 text-center">
-              <p className={`${syne.className} text-xl sm:text-2xl md:text-4xl text-white tracking-wide max-w-2xl leading-tight sm:leading-relaxed drop-shadow-md`}>
-                Designing Hair Crafts <br />
-                That Speak Your Style
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+     {/* APPOINTMENT SECTION (Unconstrained full-width banner) */}
+           <div className="relative w-full flex flex-col items-center my-8 sm:my-12">
+             <div className="w-full bg-black text-white py-8 sm:py-10 flex justify-center">
+               <div className="w-full max-w-[1072px] px-6 flex flex-col sm:flex-row justify-between items-center gap-4 pb-20 sm:pb-28 text-center sm:text-left">
+                 <h2 className={`${syne.className} text-xl xs:text-2xl md:text-4xl tracking-tight`}>Book Your Appointment Now</h2>
+                 <Link 
+                   href="/contactus" 
+                   className={`${syne.className} relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md overflow-hidden hover:opacity-90 transition-opacity flex-shrink-0 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
+                 >
+                   <span className="relative z-10 flex items-center gap-1.5 font-bold">Contact Now <span>↗</span></span>
+                 </Link>
+               </div>
+             </div>
+     
+             <div className="w-full max-w-[1072px] px-4 -mt-16 sm:-mt-28 relative z-10">
+               <div className="relative w-full h-[180px] xs:h-[220px] sm:h-[254px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                 <Image src="/images/appointment.jpg" alt="Designing Hair Crafts That Speak Your Style" fill className="object-cover object-center" />
+                 <div className="absolute inset-0 z-10 bg-black/40 flex items-center justify-center p-4 sm:p-6 text-center">
+                   <p className={`${syne.className} text-xl sm:text-3xl md:text-4xl text-white tracking-wide max-w-2xl leading-snug sm:leading-relaxed drop-shadow-md`}>
+                     Designing Hair Crafts <br /> That Speak Your Style
+                   </p>
+                 </div>
+               </div>
+             </div>
+           </div>
     </section>
   );
 }

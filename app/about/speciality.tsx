@@ -177,8 +177,8 @@ export default function Speciality() {
         </div>
       </div>
 
-      {/* BRAND STATEMENT */}
-      <section className="brand-statement w-full py-12 sm:py-20 px-4 flex justify-center">
+      {/* BRAND STATEMENT (EQUAL & TIGHTER SPACING) */}
+      <section className="brand-statement w-full py-8 sm:py-10 px-4 flex justify-center">
         <p
           className={`${urbanisty.className} text-2xl xs:text-3xl sm:text-5xl lg:text-[60px]`}
           style={{

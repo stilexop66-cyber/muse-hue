@@ -61,7 +61,7 @@ const services: ServiceItem[] = [
 
 export const SweetMemoriesOne: React.FC = () => {
   return (
-    <section className="bg-zinc-50 py-16 px-6 md:px-12 w-full">
+    <section className="bg-white py-16 px-6 md:px-12 w-full">
       <div className="max-w-5xl mx-auto space-y-10">
         
         {/* ================= HEADING ================= */}
