@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import localFont from "next/font/local";
@@ -17,6 +18,37 @@ const urbanist = localFont({
 });
 
 export default function ContactFormSection() {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus("");
+
+    const formData = new FormData(e.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setStatus("Message sent successfully!");
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus("Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("Failed to submit form.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="w-full bg-white text-neutral-900 pt-8 sm:pt-12 pb-16 sm:pb-24 overflow-hidden">
       {/* Title Header */}
@@ -37,7 +69,7 @@ export default function ContactFormSection() {
             {/* Left Side: Form */}
             <form 
               className="w-full lg:w-[406px] flex flex-col justify-between gap-6 lg:gap-[32px] shrink-0" 
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="flex flex-col gap-6 lg:gap-[32px]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -47,6 +79,8 @@ export default function ContactFormSection() {
                     </label>
                     <input
                       type="text"
+                      name="firstName"
+                      required
                       placeholder="abc"
                       className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white`}
                     />
@@ -57,6 +91,8 @@ export default function ContactFormSection() {
                     </label>
                     <input
                       type="text"
+                      name="lastName"
+                      required
                       placeholder="abc"
                       className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white`}
                     />
@@ -69,6 +105,8 @@ export default function ContactFormSection() {
                   </label>
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="abc@gmail.com"
                     className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white`}
                   />
@@ -80,6 +118,8 @@ export default function ContactFormSection() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
+                    required
                     placeholder="abc"
                     className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white`}
                   />
@@ -91,6 +131,7 @@ export default function ContactFormSection() {
                   </label>
                   <input
                     type="text"
+                    name="timeSlot"
                     placeholder="abc"
                     className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white`}
                   />
@@ -102,18 +143,24 @@ export default function ContactFormSection() {
                   </label>
                   <textarea
                     rows={4}
+                    name="message"
+                    required
                     placeholder="Text us ..."
                     className={`${urbanist.className} w-full px-3 py-2.5 rounded-md border border-neutral-200 focus:outline-none focus:ring-1 focus:ring-[#E59935] text-xs bg-white resize-none`}
                   />
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className={`${syne.className} px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] text-neutral-950 font-bold text-xs shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-1 w-full sm:w-fit shrink-0`}
-              >
-                Submit ↗
-              </button>
+              <div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className={`${syne.className} px-6 py-2.5 rounded-full bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] text-neutral-950 font-bold text-xs shadow-sm hover:opacity-90 transition-opacity flex items-center justify-center gap-1 w-full sm:w-fit shrink-0 disabled:opacity-50`}
+                >
+                  {loading ? "Submitting..." : "Submit ↗"}
+                </button>
+                {status && <p className="text-xs font-medium mt-2 text-zinc-600">{status}</p>}
+              </div>
             </form>
 
             {/* Right Side: Image Box */}
