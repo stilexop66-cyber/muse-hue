@@ -94,13 +94,12 @@ export default function Footer() {
               />
             </div>
 
-            {/* Know More Button (Gold BG) */}
+            {/* Know More Button (Tailwind Gold Gradient BG) */}
             <button
               type="button"
-              className={`${syne.className} relative inline-flex items-center justify-center w-full max-w-sm py-2.5 rounded-full text-xs overflow-hidden text-neutral-900 shadow-md mt-1`}
+              className={`${syne.className} relative inline-flex items-center justify-center w-full max-w-sm py-2.5 rounded-full text-xs font-bold text-neutral-900 shadow-md mt-1 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] hover:opacity-90 transition-opacity`}
             >
-              <Image src="/images/gold-bg.png" alt="" fill className="object-cover z-0 rounded-full" />
-              <span className="relative z-10">Know More</span>
+              <span>Know More</span>
             </button>
 
             {/* Social Media Image Icons */}

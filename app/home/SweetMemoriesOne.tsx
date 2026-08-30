@@ -65,21 +65,11 @@ export const SweetMemoriesOne: React.FC = () => {
       <div className="max-w-5xl mx-auto space-y-10">
         
         {/* ================= HEADING ================= */}
-        <h2 className={`${syne.className} text-3xl md:text-4xl text-center mb-12 flex items-center justify-center gap-2`}>
+        <h2 className={`${syne.className} text-3xl md:text-4xl text-center mb-12 flex items-center justify-center gap-2 text-zinc-900`}>
           Our Sweet{" "}
-          <div className="relative inline-flex items-center justify-center px-5 py-1.5 rounded-md overflow-hidden align-middle shadow-sm">
-            <Image
-              src="/images/gold-bg.png"
-              alt=""
-              fill
-              sizes="200px"
-              className="absolute inset-0 w-full h-full object-cover z-0"
-              priority
-            />
-            <span className={`${syne.className} relative z-10 text-neutral-900 leading-none`}>
-              Memories
-            </span>
-          </div>
+          <span className="bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] text-neutral-900 px-5 py-1.5 rounded-md shadow-sm inline-flex items-center justify-center leading-none">
+            Memories
+          </span>
         </h2>
 
         {/* ================= SERVICE CARDS ================= */}
@@ -92,20 +82,13 @@ export const SweetMemoriesOne: React.FC = () => {
             <div className={service.reversed ? "order-1 md:order-2" : "order-1"}>
               
               {/* Circular Gold Icon Badge */}
-              <div className="relative w-10 h-10 rounded-full overflow-hidden flex items-center justify-center mb-4 shadow-sm flex-shrink-0">
-                <Image
-                  src="/images/gold-bg.png"
-                  alt=""
-                  fill
-                  sizes="40px"
-                  className="absolute inset-0 w-full h-full object-cover z-0 rounded-full"
-                />
+              <div className="relative w-10 h-10 rounded-full flex items-center justify-center mb-4 shadow-sm flex-shrink-0 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]">
                 <Image
                   src={service.icon}
                   alt={`${service.title} icon`}
                   width={20}
                   height={20}
-                  className="relative z-10 object-contain"
+                  className="object-contain"
                 />
               </div>
 
@@ -117,22 +100,14 @@ export const SweetMemoriesOne: React.FC = () => {
               </p>
 
               {/* View More Pill Button */}
-{/* View More Pill Button */}
-<Link
-  href="/our-services"
-  className={`${syne.className} inline-flex items-center justify-center px-6 py-2 rounded-full text-xs font-semibold text-neutral-900 shadow-none border-0 outline-none select-none transition-transform active:scale-95`}
-  style={{
-    backgroundImage: `url('/images/gold-bg.png')`,
-    backgroundSize: '100% 100%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    WebkitAppearance: 'none',
-  }}
->
-  <span className="flex items-center gap-1 leading-none py-0.5">
-    View More ↗
-  </span>
-</Link>
+              <Link
+                href="/our-services"
+                className={`${syne.className} inline-flex items-center justify-center px-6 py-2 rounded-full text-xs font-semibold text-neutral-900 shadow-none border-0 outline-none select-none transition-transform active:scale-95 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
+              >
+                <span className="flex items-center gap-1 leading-none py-0.5">
+                  View More ↗
+                </span>
+              </Link>
             </div>
 
             {/* Image Column */}
@@ -153,15 +128,8 @@ export const SweetMemoriesOne: React.FC = () => {
 
         {/* ================= BOTTOM BUTTON ================= */}
         <div className="text-center pt-4">
-          <button className={`${syne.className} relative inline-flex items-center justify-center px-9 py-3 rounded-full text-sm overflow-hidden group shadow-md text-neutral-900 transition-transform active:scale-95`}>
-            <Image
-              src="/images/gold-bg.png"
-              alt=""
-              fill
-              sizes="250px"
-              className="absolute inset-0 w-full h-full object-cover z-0 rounded-full group-hover:scale-105 transition-transform duration-300"
-            />
-            <span className="relative z-10 flex items-center gap-2 leading-none">
+          <button className={`${syne.className} inline-flex items-center justify-center px-9 py-3 rounded-full text-sm font-semibold text-neutral-900 shadow-md transition-transform active:scale-95 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] hover:opacity-95`}>
+            <span className="flex items-center gap-2 leading-none">
               Enter Care →
             </span>
           </button>

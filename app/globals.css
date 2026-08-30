@@ -2,6 +2,11 @@
 
 @import "tailwindcss";
 
+
+@theme {
+  --background-image-gold-gradient: linear-gradient(90deg, #E59935 0%, #FFE998 55%, #E59935 100%);
+}
+
 :root {
   --cream: #fffdf9;
   --dark: #1e302d;

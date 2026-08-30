@@ -136,69 +136,71 @@ export default function OurServicesSection() {
   const renderCard = (category: ServiceCategory) => (
     <div
       key={category.title}
-      className="w-full max-w-[504px] p-6 sm:p-8 lg:p-10 bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col relative"
+      className="w-full p-6 sm:p-8 lg:p-10 bg-white rounded-2xl shadow-sm border border-neutral-100 flex flex-col justify-between relative"
     >
-      {/* Category Icon Badge */}
-      <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#E5B548] via-[#F3CE6D] to-[#D89F30] flex items-center justify-center mb-6 shadow-md overflow-hidden">
-        <div className="relative w-7 h-7 sm:w-9 sm:h-9">
-          <Image
-            src={category.iconSrc}
-            alt={`${category.title} Icon`}
-            fill
-            className="object-contain"
-          />
-        </div>
-      </div>
-
-      {/* Title & Floral Accent */}
-      <div className="relative mb-6 sm:mb-8 flex items-center justify-between">
-        <h3
-          className={`${syne.className} text-2xl sm:text-3xl md:text-4xl tracking-tight text-neutral-900 max-w-[65%] leading-tight`}
-        >
-          {category.title}
-        </h3>
-
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
-          <Image
-            src="/images/floral-leaf.png"
-            alt="Floral Leaf"
-            fill
-            className="object-contain"
-          />
-        </div>
-      </div>
-
-      {/* Service Items Box */}
-      <div
-        className={`flex flex-col mb-6 sm:mb-8 w-full max-w-[367px] ${getItemGap(
-          category.title
-        )}`}
-      >
-        {category.items.map((item, itemIdx) => (
-          <div key={itemIdx} className="pb-2 border-b border-neutral-200">
-            <div className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] flex items-center justify-center flex-shrink-0 shadow-sm">
-                <svg
-                  className="w-3 h-3 text-neutral-950 stroke-[3]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-              </div>
-              <span
-                className={`${urbanist.className} text-xs sm:text-sm text-neutral-800`}
-              >
-                {item}
-              </span>
-            </div>
+      <div>
+        {/* Category Icon Badge */}
+        <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#E5B548] via-[#F3CE6D] to-[#D89F30] flex items-center justify-center mb-6 shadow-md overflow-hidden">
+          <div className="relative w-7 h-7 sm:w-9 sm:h-9">
+            <Image
+              src={category.iconSrc}
+              alt={`${category.title} Icon`}
+              fill
+              className="object-contain"
+            />
           </div>
-        ))}
+        </div>
+
+        {/* Title & Floral Accent */}
+        <div className="relative mb-6 sm:mb-8 flex items-center justify-between">
+          <h3
+            className={`${syne.className} text-2xl sm:text-3xl md:text-4xl tracking-tight text-neutral-900 max-w-[65%] leading-tight`}
+          >
+            {category.title}
+          </h3>
+
+          <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
+            <Image
+              src="/images/floral-leaf.png"
+              alt="Floral Leaf"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Service Items Box */}
+        <div
+          className={`flex flex-col mb-6 sm:mb-8 w-full ${getItemGap(
+            category.title
+          )}`}
+        >
+          {category.items.map((item, itemIdx) => (
+            <div key={itemIdx} className="pb-2 border-b border-neutral-200">
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-gradient-to-r from-[#D4A338] via-[#FCE38A] to-[#B8860B] flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <svg
+                    className="w-3 h-3 text-neutral-950 stroke-[3]"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span
+                  className={`${urbanist.className} text-xs sm:text-sm text-neutral-800`}
+                >
+                  {item}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Button */}
@@ -215,7 +217,7 @@ export default function OurServicesSection() {
 
   return (
     <section className="bg-[#FAF8F5] text-neutral-900 py-12 sm:py-16 px-4 md:px-8 overflow-hidden">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
+      <div className="max-w-[1048px] mx-auto flex flex-col items-center">
         {/* Title Header */}
         <div className="flex justify-center items-center gap-2 sm:gap-3 mb-10 sm:mb-16">
           <span
@@ -232,15 +234,15 @@ export default function OurServicesSection() {
           </div>
         </div>
 
-        {/* 2-Column Wrapper */}
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-[40px] justify-center items-center lg:items-start w-full">
+        {/* Equal 2-Column Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-[40px] w-full">
           {/* Left Column */}
-          <div className="flex flex-col gap-6 sm:gap-[40px] w-full lg:w-auto items-center">
+          <div className="flex flex-col gap-6 lg:gap-[40px] w-full">
             {leftColumnData.map(renderCard)}
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-6 sm:gap-[40px] w-full lg:w-auto items-center">
+          <div className="flex flex-col gap-6 lg:gap-[40px] w-full">
             {rightColumnData.map(renderCard)}
           </div>
         </div>

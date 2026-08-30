@@ -8,7 +8,7 @@ import localFont from "next/font/local";
 
 const urbanist = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/Urbanist-Regular.ttf",
-  weight: "900",
+  weight: "300",
   style: "normal",
 });
 
@@ -25,7 +25,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-black border-b border-neutral-900 text-[#D4AF37]">
+    <header className="sticky top-0 z-50 w-full bg-black border-b border-neutral-900 text-white">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -40,7 +40,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className={`${urbanist.className} hidden md:flex items-center gap-8 text-base tracking-wide`}>
+        <nav className="hidden md:flex items-center gap-8 text-base tracking-wide">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
 
@@ -48,12 +48,16 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative py-1 transition-colors duration-200 hover:text-[#F3E5AB]"
+                className={`${urbanist.className} relative py-1 transition-opacity duration-200 hover:opacity-80`}
               >
-                {link.name}
-                {/* Active Gold Underline */}
+                {/* Gold Gradient Text applied to ALL links */}
+                <span className="inline-block bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] bg-clip-text text-transparent font-bold">
+                  {link.name}
+                </span>
+
+                {/* Active Underline Indicator */}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#D4AF37]" />
+                  <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]" />
                 )}
               </Link>
             );
@@ -63,7 +67,7 @@ export default function Navbar() {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-[#D4AF37] hover:text-[#F3E5AB] focus:outline-none p-2"
+          className="md:hidden text-[#E59935] hover:opacity-80 focus:outline-none p-2"
           aria-label="Toggle Menu"
         >
           <svg
@@ -93,7 +97,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className={`${urbanist.className} md:hidden bg-black border-b border-neutral-900 px-6 py-6 flex flex-col gap-5 text-center`}>
+        <div className="md:hidden bg-black border-b border-neutral-900 px-6 py-6 flex flex-col gap-5 text-center">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
 
@@ -102,11 +106,11 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-lg transition-colors duration-200 ${
-                  isActive ? "text-[#D4AF37] underline underline-offset-8" : "text-[#D4AF37]/80 hover:text-[#D4AF37]"
-                }`}
+                className={`${urbanist.className} text-lg transition-opacity duration-200 hover:opacity-80`}
               >
-                {link.name}
+                <span className="inline-block bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] bg-clip-text text-transparent font-bold">
+                  {link.name}
+                </span>
               </Link>
             );
           })}

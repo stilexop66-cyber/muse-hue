@@ -1,4 +1,3 @@
-
 import React from "react";
 import localFont from "next/font/local";
 
@@ -76,13 +75,7 @@ export default function ChooseUs() {
           className={`${syne.className} text-2xl xs:text-3xl sm:text-4xl lg:text-5xl tracking-tight inline-flex items-center justify-center gap-2 flex-wrap`}
         >
           Why Clients{" "}
-          <div className="relative inline-flex items-center justify-center px-4 sm:px-8 py-1 sm:py-2 mx-1 rounded-md overflow-hidden align-middle">
-            {/* Background Div */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/gold-bg.png')" }}
-            />
-
+          <div className="relative inline-flex items-center justify-center px-4 sm:px-8 py-1 sm:py-2 mx-1 rounded-md bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] align-middle shadow-sm">
             {/* Text on top */}
             <span className={`${syne.className} relative z-10 text-neutral-900`}>
               Choose
@@ -108,7 +101,7 @@ export default function ChooseUs() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:contents">
             {/* Left Top Card (01) */}
             <div className="choose-card choose-card-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">
+              <div className="choose-icon mb-3 text-[#E59935]">
                 {reasons[0].icon}
               </div>
 
@@ -125,7 +118,7 @@ export default function ChooseUs() {
 
             {/* Right Top Card (02) */}
             <div className="choose-card choose-card-2 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">
+              <div className="choose-icon mb-3 text-[#E59935]">
                 {reasons[1].icon}
               </div>
 
@@ -142,7 +135,7 @@ export default function ChooseUs() {
 
             {/* Left Bottom Card (03) */}
             <div className="choose-card choose-card-3 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">
+              <div className="choose-icon mb-3 text-[#E59935]">
                 {reasons[2].icon}
               </div>
 
@@ -159,7 +152,7 @@ export default function ChooseUs() {
 
             {/* Right Bottom Card (04) */}
             <div className="choose-card choose-card-4 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">
+              <div className="choose-icon mb-3 text-[#E59935]">
                 {reasons[3].icon}
               </div>
 
@@ -176,7 +169,7 @@ export default function ChooseUs() {
 
             {/* Bottom Center Card (05) */}
             <div className="choose-card choose-card-5 md:col-span-2 lg:col-span-1 p-5 sm:p-6 bg-white rounded-xl shadow-sm border border-neutral-100">
-              <div className="choose-icon mb-3 text-[#D4A338]">
+              <div className="choose-icon mb-3 text-[#E59935]">
                 {reasons[4].icon}
               </div>
 

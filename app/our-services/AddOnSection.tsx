@@ -15,14 +15,6 @@ const urbanist = localFont({
   style: "normal",
 });
 
-// Pure CSS Gold Metallic Texture
-const GOLD_STYLE: React.CSSProperties = {
-  background: 'linear-gradient(135deg, #e6c46e 0%, #fef1c9 45%, #d49e35 70%, #f6da89 100%)',
-  border: 'none',
-  outline: 'none',
-  boxShadow: 'none',
-};
-
 const addOns = [
   "Hair Treatments",
   "Skin Treatments",
@@ -40,8 +32,7 @@ export default function AddOnSection() {
           Add
         </span>
         <span 
-          className={`${syne.className} text-[#111111] text-3xl sm:text-4xl md:text-5xl px-4 sm:px-6 py-1.5 sm:py-2 rounded-sm shadow-sm inline-flex items-center justify-center min-w-[65px] sm:min-w-[80px] leading-none select-none`}
-          style={GOLD_STYLE}
+          className={`${syne.className} text-[#111111] text-3xl sm:text-4xl md:text-5xl px-4 sm:px-6 py-1.5 sm:py-2 rounded-sm shadow-sm inline-flex items-center justify-center min-w-[65px] sm:min-w-[80px] leading-none select-none bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
         >
           On
         </span>
@@ -57,8 +48,7 @@ export default function AddOnSection() {
               className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center overflow-hidden"
             >
               <div
-                className="absolute top-0 left-0 right-0 h-[4px]"
-                style={GOLD_STYLE}
+                className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]"
               />
               <h3 className={`${syne.className} text-base sm:text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
@@ -75,8 +65,7 @@ export default function AddOnSection() {
               className="relative w-full sm:w-[266px] h-[100px] sm:h-[118px] p-4 sm:py-[40px] sm:px-[20px] bg-white rounded-md shadow-md flex items-center justify-center overflow-hidden"
             >
               <div
-                className="absolute top-0 left-0 right-0 h-[4px]"
-                style={GOLD_STYLE}
+                className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]"
               />
               <h3 className={`${syne.className} text-base sm:text-lg text-neutral-900 tracking-wide text-center leading-snug`}>
                 {item}
@@ -97,8 +86,7 @@ export default function AddOnSection() {
 
             <Link
               href="/contactus"
-              className={`${syne.className} px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md flex-shrink-0 inline-flex items-center gap-1.5 font-bold leading-none transition-transform active:scale-95`}
-              style={GOLD_STYLE}
+              className={`${syne.className} px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md flex-shrink-0 inline-flex items-center gap-1.5 font-bold leading-none transition-transform active:scale-95 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
             >
               Contact Now <span>↗</span>
             </Link>

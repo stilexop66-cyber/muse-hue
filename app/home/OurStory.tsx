@@ -14,6 +14,7 @@ const urbanist = localFont({
   weight: "900",
   style: "normal",
 });
+
 const bag = localFont({
   src: "../fonts/Fiorello CG Condensed Regular/bg.ttf",
   weight: "900",
@@ -43,27 +44,15 @@ export const OurStory: React.FC = () => {
     <section className="bg-white text-zinc-900 py-12 md:py-16 px-4 md:px-12 w-full">
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         {/* ================= HEADING WITH BOTH GOLD BACKGROUND WORDS ================= */}
-        <h2 className={`${syne.className} text-3xl md:text-5xl text-center mb-10 flex flex-wrap items-center gap-3 justify-center`}>
+        <h2 className={`${syne.className} text-3xl md:text-5xl text-center mb-10 flex flex-wrap items-center gap-3 justify-center text-zinc-900`}>
           Our{" "}
-          <div className="relative inline-flex items-center justify-center px-6 py-1.5 rounded-md overflow-hidden align-middle">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/gold-bg.png')" }}
-            />
-            <span className={`${syne.className} relative z-10 text-neutral-900`}>
-              Story
-            </span>
-          </div>{" "}
+          <span className="bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] text-neutral-900 px-6 py-1.5 rounded-md inline-flex items-center justify-center">
+            Story
+          </span>{" "}
           All In{" "}
-          <div className="relative inline-flex items-center justify-center px-6 py-1.5 rounded-md overflow-hidden align-middle">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/gold-bg.png')" }}
-            />
-            <span className={`${syne.className} relative z-10 text-neutral-900`}>
-              One
-            </span>
-          </div>
+          <span className="bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935] text-neutral-900 px-6 py-1.5 rounded-md inline-flex items-center justify-center">
+            One
+          </span>
         </h2>
 
         {/* ================= IMAGE COLLAGE ================= */}
@@ -101,7 +90,7 @@ export const OurStory: React.FC = () => {
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="p-6 bg-[#FAF9F6] rounded-xl border-t-4 border-[#D4A338] shadow-sm flex flex-col gap-3"
+              className="p-6 bg-[#FAF9F6] rounded-xl border-t-4 border-[#E59935] shadow-sm flex flex-col gap-3"
             >
               <div className="relative w-8 h-8 flex-shrink-0">
                 <Image
