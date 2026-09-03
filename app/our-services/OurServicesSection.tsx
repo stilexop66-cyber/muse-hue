@@ -52,23 +52,7 @@ const leftColumnData: ServiceCategory[] = [
       "De-Tan Treatment",
     ],
   },
-  {
-    title: "Nail Services",
-    iconSrc: "/images/skin-icon.png",
-    items: [
-      "Manicure",
-      "Pedicure",
-      "Nail Extensions",
-      "Nail Art",
-      "Gel Polish",
-      "Acrylic Nails",
-      "French Nails",
-    ],
-  },
-];
-
-const rightColumnData: ServiceCategory[] = [
-  {
+   {
     title: "Beard & Grooming",
     iconSrc: "/images/beard2-icon.png",
     items: [
@@ -82,7 +66,12 @@ const rightColumnData: ServiceCategory[] = [
       "Hair & Beard Coloring",
       "Detan Treatment",
     ],
-  },
+  }
+ 
+];
+
+const rightColumnData: ServiceCategory[] = [
+ 
   {
     title: "Waxing Services",
     iconSrc: "/images/makeup-icon.png",
