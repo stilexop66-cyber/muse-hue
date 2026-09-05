@@ -157,7 +157,9 @@ export default function Speciality() {
           <div className="w-full max-w-[1072px] px-6 flex flex-col sm:flex-row justify-between items-center gap-4 pb-20 sm:pb-28 text-center sm:text-left">
             <h2 className={`${syne.className} text-xl xs:text-2xl md:text-4xl tracking-tight`}>Book Your Appointment Now</h2>
             <Link 
-              href="/contactus" 
+              href="https://boscle.in/book/muse-and-hue" 
+              target="_blank"
+              rel="noopener noreferrer"
               className={`${syne.className} relative inline-flex items-center justify-center px-7 py-3 rounded-full text-neutral-950 text-sm shadow-md overflow-hidden hover:opacity-90 transition-opacity flex-shrink-0 bg-gradient-to-r from-[#E59935] via-[#FFE998] to-[#E59935]`}
             >
               <span className="relative z-10 flex items-center gap-1.5 font-bold">Contact Now <span>↗</span></span>
